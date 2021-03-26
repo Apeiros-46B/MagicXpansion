@@ -1,5 +1,5 @@
 # MagicXpansion
----
+
 This addon adds more magical gadgets and talismans.
 ### List of items and resources
 - Ender and Magical lumps IV and V
