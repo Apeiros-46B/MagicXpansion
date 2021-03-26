@@ -1,7 +1,7 @@
 package me.hexagone.magicxpansion;
 
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import me.hexagone.magicxpansion.items.Lumps;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -26,45 +26,8 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
             // You could start an Auto-Updater for example
         }
 
-        /*
-         * 1. Creating a new Category
-         * This Category will use the following ItemStack
-         */
-        ItemStack categoryItem = new CustomItem(Material.END_PORTAL_FRAME, "&6MagicXpansion", "", "⇨ &aClick to open");
-
-        // Give your Category a unique id.
-        NamespacedKey categoryId = new NamespacedKey(this, "magicxpansion_category");
-        Category category = new Category(categoryId, categoryItem);
-
-        /*
-         * 2. Create a new SlimefunItemStack
-         * This class has many constructors, it is very important
-         * that you give each item a unique id.
-         */
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "", "&c&oTier: IV");
-
-        /*
-         * 3. Creating a Recipe
-         * The Recipe is an ItemStack Array with a length of 9.
-         * It represents a Shaped Recipe in a 3x3 crafting grid.
-         * The machine in which this recipe is crafted in is specified
-         * further down as the RecipeType.
-         */
-        ItemStack[] recipe = {
-                SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
-                SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
-                null, null, null
-        };
-
-        /*
-         * 4. Registering the Item
-         * Now you just have to register the item.
-         * RecipeType.ENHANCED_CRAFTING_TABLE refers to the machine in
-         * which this item is crafted in.
-         * Recipe Types from Slimefun itself will automatically add the recipe to that machine.
-         */
-        SlimefunItem item = new SlimefunItem(category, slimefunItem, RecipeType.MAGIC_WORKBENCH, recipe);
-        item.register(this);
+        // Create category and items, then register them
+        createAndRegisterItems();
     }
 
     @Override
@@ -87,4 +50,46 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         return this;
     }
 
+    public void createAndRegisterItems() {
+        // Create category
+        ItemStack categoryItem = new CustomItem(Material.END_PORTAL_FRAME, "&6MagicXpansion", "", "⇨ &aClick to open");
+        NamespacedKey categoryId = new NamespacedKey(this, "magicxpansion_category");
+        Category category = new Category(categoryId, categoryItem);
+
+        // Create Magical and Ender Lumps
+        SlimefunItemStack MagicLump4 = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "", "&c&oTier: IV");
+        SlimefunItemStack MagicLump5 = new SlimefunItemStack("MX_MAGIC_LUMP_5", Material.GOLD_NUGGET, "&6Magical Lump &7- &eV", "", "&c&oTier: V");
+        SlimefunItemStack EnderLump4 = new SlimefunItemStack("MX_ENDER_LUMP_4", Material.GOLD_NUGGET, "&5Ender Lump &7- &eIV", "", "&c&oTier: IV");
+        SlimefunItemStack EnderLump5 = new SlimefunItemStack("MX_ENDER_LUMP_5", Material.GOLD_NUGGET, "&5Ender Lump &7- &eV", "", "&c&oTier: V");
+
+        ItemStack[] MagicLump4Recipe = {
+                SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
+                SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
+                null, null, null
+        };
+        ItemStack[] MagicLump5Recipe = {
+                MagicLump4, MagicLump4, null,
+                MagicLump4, MagicLump4, null,
+                null, null, null
+        };
+        ItemStack[] EnderLump4Recipe = {
+                SlimefunItems.ENDER_LUMP_3, SlimefunItems.ENDER_LUMP_3, null,
+                SlimefunItems.ENDER_LUMP_3, SlimefunItems.ENDER_LUMP_3, null,
+                null, null, null
+        };
+        ItemStack[] EnderLump5Recipe = {
+                EnderLump4, EnderLump4, null,
+                EnderLump4, EnderLump4, null,
+                null, null, null
+        };
+
+        SlimefunItem magiclump4 = new Lumps(category, MagicLump4, RecipeType.MAGIC_WORKBENCH, MagicLump4Recipe);
+        magiclump4.register(this);
+        SlimefunItem magiclump5 = new Lumps(category, MagicLump5, RecipeType.MAGIC_WORKBENCH, MagicLump5Recipe);
+        magiclump5.register(this);
+        SlimefunItem enderlump4 = new Lumps(category, EnderLump4, RecipeType.MAGIC_WORKBENCH, EnderLump4Recipe);
+        enderlump4.register(this);
+        SlimefunItem enderlump5 = new Lumps(category, EnderLump5, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
+        enderlump5.register(this);
+    }
 }
