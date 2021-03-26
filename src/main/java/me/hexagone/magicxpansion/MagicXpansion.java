@@ -1,5 +1,7 @@
 package me.hexagone.magicxpansion;
 
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -28,10 +30,10 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
          * 1. Creating a new Category
          * This Category will use the following ItemStack
          */
-        ItemStack categoryItem = new CustomItem(Material.DIAMOND, "&4Addon Category", "", "&a> Click to open");
+        ItemStack categoryItem = new CustomItem(Material.END_PORTAL_FRAME, "&6MagicXpansion", "", "⇨ &aClick to open");
 
         // Give your Category a unique id.
-        NamespacedKey categoryId = new NamespacedKey(this, "addon_category");
+        NamespacedKey categoryId = new NamespacedKey(this, "magicxpansion_category");
         Category category = new Category(categoryId, categoryItem);
 
         /*
@@ -39,7 +41,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
          * This class has many constructors, it is very important
          * that you give each item a unique id.
          */
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&4Cool Diamond", "&c+20% Coolness");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "&cTier: IV");
 
         /*
          * 3. Creating a Recipe
@@ -48,7 +50,11 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
          * The machine in which this recipe is crafted in is specified
          * further down as the RecipeType.
          */
-        ItemStack[] recipe = { new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD), null, new ItemStack(Material.DIAMOND), null, new ItemStack(Material.EMERALD), null, new ItemStack(Material.EMERALD) };
+        ItemStack[] recipe = {
+                SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
+                SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
+                null, null, null
+        };
 
         /*
          * 4. Registering the Item
@@ -57,7 +63,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
          * which this item is crafted in.
          * Recipe Types from Slimefun itself will automatically add the recipe to that machine.
          */
-        SlimefunItem item = new SlimefunItem(category, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        SlimefunItem item = new SlimefunItem(category, slimefunItem, RecipeType.MAGIC_WORKBENCH, recipe);
         item.register(this);
     }
 
