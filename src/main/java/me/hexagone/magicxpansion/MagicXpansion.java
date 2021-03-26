@@ -87,7 +87,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         // Create Arcanium Ore
         SlimefunItemStack ArcaniumOreItem = new SlimefunItemStack("ARCANIUM_ORE",
                 "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E2ZGNmMjc1Y2Y1OGM2NGNhN2I0ZDFmYzRlYTAwOWEyYjU2OTk1ZjUxYjU0OTg3NGJhNzg5ODZjZGVhYjdkMyJ9fX0=",
-                "&5Ender Ore", "&7You can smelt this into an Ingot in a Smeltery");
+                "&cArcanium Ore", "&7You can smelt this into an Ingot in a Smeltery");
 
         // Create Arcanium Ingot
         SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK, "&c&lArcanium Ingot", "");
