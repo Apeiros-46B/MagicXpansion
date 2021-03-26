@@ -2,8 +2,10 @@ package me.hexagone.magicxpansion;
 
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.hexagone.magicxpansion.georesources.ArcaniumOreResource;
+import me.hexagone.magicxpansion.items.CraftingItem;
 import me.hexagone.magicxpansion.items.Lump;
 import me.hexagone.magicxpansion.items.ResourceIngot;
+import me.hexagone.magicxpansion.tools.ContainerItem;
 import me.hexagone.magicxpansion.tools.InfinityCrossbow;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -100,8 +102,23 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
                 null, null, null
         };
 
+        // Create Reinforced Shulker Shell and Reinforced Shulker Box
+        SlimefunItemStack ReinforcedShulkerShellItem = new SlimefunItemStack("REINFORCED_SHULKER_SHELL", Material.SHULKER_SHELL, "&6Reinforced Shulker Shell", "", "&aForged from the strongest of material,", "&athis Shulker Shell is almost unbreakable.");
+        SlimefunItemStack ReinforcedShulkerBoxItem = new SlimefunItemStack("REINFORCED_SHULKER_BOX", Material.WHITE_SHULKER_BOX, "&5&lReinforced Shulker Box", "", "&a6-row storage", "&aBlast-resistant");
+
+        ItemStack[] ReinforcedShulkerShellRecipe = {
+                new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.SHULKER_SHELL),
+                new ItemStack(Material.SHULKER_SHELL), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.SHULKER_SHELL),
+                new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.SHULKER_SHELL)
+        };
+        ItemStack[] ReinforcedShulkerBoxRecipe = {
+                new ItemStack(Material.OBSIDIAN), ReinforcedShulkerShellItem, new ItemStack(Material.OBSIDIAN),
+                new ItemStack(Material.OBSIDIAN), new ItemStack(Material.CHEST), new ItemStack(Material.OBSIDIAN),
+                new ItemStack(Material.OBSIDIAN), ReinforcedShulkerShellItem, new ItemStack(Material.OBSIDIAN)
+        };
+
         // Create Crossbow of Infinity
-        SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW, "&6Crossbow of Infinity", "&aNever runs out of arrows.");
+        SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW, "&6Crossbow of Infinity", "", "&aNever runs out of arrows.");
 
         ItemStack[] InfinityCrossbowRecipe = {
                 SlimefunItems.CARBON_CHUNK, SlimefunItems.ENDER_RUNE, SlimefunItems.CARBON_CHUNK,
@@ -118,6 +135,10 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         EnderLump4.register(this);
         SlimefunItem EnderLump5 = new Lump(category, EnderLump5Item, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
         EnderLump5.register(this);
+        SlimefunItem ReinforcedShulkerShell = new CraftingItem(category, ReinforcedShulkerShellItem, RecipeType.ANCIENT_ALTAR, ReinforcedShulkerShellRecipe);
+        ReinforcedShulkerShell.register(this);
+        SlimefunItem ReinforcedShulkerBox = new ContainerItem(category, ReinforcedShulkerBoxItem, RecipeType.ANCIENT_ALTAR, ReinforcedShulkerBoxRecipe);
+        ReinforcedShulkerBox.register(this);
         SlimefunItem ArcaniumOre = new SlimefunItem(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
         ArcaniumOre.register(this);
         SlimefunItem ArcaniumIngot = new ResourceIngot(category, ArcaniumIngotItem, RecipeType.SMELTERY, ArcaniumIngotRecipe);
