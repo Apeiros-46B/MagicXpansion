@@ -3,6 +3,8 @@ package me.hexagone.magicxpansion;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.hexagone.magicxpansion.georesources.ArcaniumOreResource;
 import me.hexagone.magicxpansion.items.Lump;
+import me.hexagone.magicxpansion.items.ResourceIngot;
+import me.hexagone.magicxpansion.tools.InfinityCrossbow;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -91,25 +93,37 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
 
         // Create Arcanium Ingot
         SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK, "&c&lArcanium Ingot");
+
         ItemStack[] ArcaniumIngotRecipe = {
                 ArcaniumOreItem, null, null,
                 null, null, null,
                 null, null, null
         };
 
+        // Create Crossbow of Infinity
+        SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW, "&6Crossbow of Infinity", "&aNever runs out of arrows.");
+
+        ItemStack[] InfinityCrossbowRecipe = {
+                SlimefunItems.CARBON_CHUNK, SlimefunItems.ENDER_RUNE, SlimefunItems.CARBON_CHUNK,
+                SlimefunItems.SYNTHETIC_EMERALD, new ItemStack(Material.CROSSBOW), SlimefunItems.SYNTHETIC_EMERALD,
+                ArcaniumIngotItem, SlimefunItems.ENDER_RUNE, ArcaniumIngotItem
+        };
+
         // Register Items
-        SlimefunItem magiclump4 = new Lump(category, MagicLump4Item, RecipeType.MAGIC_WORKBENCH, MagicLump4Recipe);
-        magiclump4.register(this);
-        SlimefunItem magiclump5 = new Lump(category, MagicLump5Item, RecipeType.MAGIC_WORKBENCH, MagicLump5Recipe);
-        magiclump5.register(this);
-        SlimefunItem enderlump4 = new Lump(category, EnderLump4Item, RecipeType.MAGIC_WORKBENCH, EnderLump4Recipe);
-        enderlump4.register(this);
-        SlimefunItem enderlump5 = new Lump(category, EnderLump5Item, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
-        enderlump5.register(this);
-        SlimefunItem arcaniumore = new SlimefunItem(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
-        arcaniumore.register(this);
-        SlimefunItem arcaniumingot = new SlimefunItem(category, ArcaniumIngotItem, RecipeType.SMELTERY, ArcaniumIngotRecipe);
-        arcaniumingot.register(this);
+        SlimefunItem MagicLump4 = new Lump(category, MagicLump4Item, RecipeType.MAGIC_WORKBENCH, MagicLump4Recipe);
+        MagicLump4.register(this);
+        SlimefunItem MagicLump5 = new Lump(category, MagicLump5Item, RecipeType.MAGIC_WORKBENCH, MagicLump5Recipe);
+        MagicLump5.register(this);
+        SlimefunItem EnderLump4 = new Lump(category, EnderLump4Item, RecipeType.MAGIC_WORKBENCH, EnderLump4Recipe);
+        EnderLump4.register(this);
+        SlimefunItem EnderLump5 = new Lump(category, EnderLump5Item, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
+        EnderLump5.register(this);
+        SlimefunItem ArcaniumOre = new SlimefunItem(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
+        ArcaniumOre.register(this);
+        SlimefunItem ArcaniumIngot = new ResourceIngot(category, ArcaniumIngotItem, RecipeType.SMELTERY, ArcaniumIngotRecipe);
+        ArcaniumIngot.register(this);
+        SlimefunItem InfinityCrossbow = new InfinityCrossbow(category, InfinityCrossbowItem, RecipeType.ANCIENT_ALTAR, InfinityCrossbowRecipe);
+        InfinityCrossbow.register(this);
 
         // Register GEO-Resources
         ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(this, ArcaniumOreItem);
