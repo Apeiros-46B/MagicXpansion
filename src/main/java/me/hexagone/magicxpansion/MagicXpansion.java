@@ -41,7 +41,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
          * This class has many constructors, it is very important
          * that you give each item a unique id.
          */
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "&cTier: IV");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "", "&c&oTier: IV");
 
         /*
          * 3. Creating a Recipe
