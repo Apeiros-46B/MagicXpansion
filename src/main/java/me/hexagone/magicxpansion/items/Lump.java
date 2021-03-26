@@ -6,9 +6,9 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class Lumps extends SlimefunItem {
+public class Lump extends SlimefunItem {
 
-    public Lumps(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public Lump(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 

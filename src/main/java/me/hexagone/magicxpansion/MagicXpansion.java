@@ -1,7 +1,8 @@
 package me.hexagone.magicxpansion;
 
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.hexagone.magicxpansion.items.Lumps;
+import me.hexagone.magicxpansion.georesources.ArcaniumOreResource;
+import me.hexagone.magicxpansion.items.Lump;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -57,10 +58,10 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         Category category = new Category(categoryId, categoryItem);
 
         // Create Magical and Ender Lumps
-        SlimefunItemStack MagicLump4 = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "", "&c&oTier: IV");
-        SlimefunItemStack MagicLump5 = new SlimefunItemStack("MX_MAGIC_LUMP_5", Material.GOLD_NUGGET, "&6Magical Lump &7- &eV", "", "&c&oTier: V");
-        SlimefunItemStack EnderLump4 = new SlimefunItemStack("MX_ENDER_LUMP_4", Material.GOLD_NUGGET, "&5Ender Lump &7- &eIV", "", "&c&oTier: IV");
-        SlimefunItemStack EnderLump5 = new SlimefunItemStack("MX_ENDER_LUMP_5", Material.GOLD_NUGGET, "&5Ender Lump &7- &eV", "", "&c&oTier: V");
+        SlimefunItemStack MagicLump4Item = new SlimefunItemStack("MX_MAGIC_LUMP_4", Material.GOLD_NUGGET, "&6Magical Lump &7- &eIV", "", "&c&oTier: IV");
+        SlimefunItemStack MagicLump5Item = new SlimefunItemStack("MX_MAGIC_LUMP_5", Material.GOLD_NUGGET, "&6Magical Lump &7- &eV", "", "&c&oTier: V");
+        SlimefunItemStack EnderLump4Item = new SlimefunItemStack("MX_ENDER_LUMP_4", Material.GOLD_NUGGET, "&5Ender Lump &7- &eIV", "", "&c&oTier: IV");
+        SlimefunItemStack EnderLump5Item = new SlimefunItemStack("MX_ENDER_LUMP_5", Material.GOLD_NUGGET, "&5Ender Lump &7- &eV", "", "&c&oTier: V");
 
         ItemStack[] MagicLump4Recipe = {
                 SlimefunItems.MAGIC_LUMP_3, SlimefunItems.MAGIC_LUMP_3, null,
@@ -68,8 +69,8 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
                 null, null, null
         };
         ItemStack[] MagicLump5Recipe = {
-                MagicLump4, MagicLump4, null,
-                MagicLump4, MagicLump4, null,
+                MagicLump4Item, MagicLump4Item, null,
+                MagicLump4Item, MagicLump4Item, null,
                 null, null, null
         };
         ItemStack[] EnderLump4Recipe = {
@@ -78,18 +79,40 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
                 null, null, null
         };
         ItemStack[] EnderLump5Recipe = {
-                EnderLump4, EnderLump4, null,
-                EnderLump4, EnderLump4, null,
+                EnderLump4Item, EnderLump4Item, null,
+                EnderLump4Item, EnderLump4Item, null,
                 null, null, null
         };
 
-        SlimefunItem magiclump4 = new Lumps(category, MagicLump4, RecipeType.MAGIC_WORKBENCH, MagicLump4Recipe);
+        // Create Arcanium Ore
+        SlimefunItemStack ArcaniumOreItem = new SlimefunItemStack("ARCANIUM_ORE",
+                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E2ZGNmMjc1Y2Y1OGM2NGNhN2I0ZDFmYzRlYTAwOWEyYjU2OTk1ZjUxYjU0OTg3NGJhNzg5ODZjZGVhYjdkMyJ9fX0=",
+                "&5Ender Ore", "&7You can smelt this into an Ingot in a Smeltery");
+
+        // Create Arcanium Ingot
+        SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK, "&c&lArcanium Ingot", "");
+        ItemStack[] ArcaniumIngotRecipe = {
+                ArcaniumOreItem, null, null,
+                null, null, null,
+                null, null, null
+        };
+
+        // Register Items
+        SlimefunItem magiclump4 = new Lump(category, MagicLump4Item, RecipeType.MAGIC_WORKBENCH, MagicLump4Recipe);
         magiclump4.register(this);
-        SlimefunItem magiclump5 = new Lumps(category, MagicLump5, RecipeType.MAGIC_WORKBENCH, MagicLump5Recipe);
+        SlimefunItem magiclump5 = new Lump(category, MagicLump5Item, RecipeType.MAGIC_WORKBENCH, MagicLump5Recipe);
         magiclump5.register(this);
-        SlimefunItem enderlump4 = new Lumps(category, EnderLump4, RecipeType.MAGIC_WORKBENCH, EnderLump4Recipe);
+        SlimefunItem enderlump4 = new Lump(category, EnderLump4Item, RecipeType.MAGIC_WORKBENCH, EnderLump4Recipe);
         enderlump4.register(this);
-        SlimefunItem enderlump5 = new Lumps(category, EnderLump5, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
+        SlimefunItem enderlump5 = new Lump(category, EnderLump5Item, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
         enderlump5.register(this);
+        SlimefunItem arcaniumore = new SlimefunItem(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
+        arcaniumore.register(this);
+        SlimefunItem arcaniumingot = new SlimefunItem(category, ArcaniumIngotItem, RecipeType.SMELTERY, ArcaniumIngotRecipe);
+        arcaniumingot.register(this);
+
+        // Register GEO-Resources
+        ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(this, ArcaniumOreItem);
+        arcaniumOreResource.register();
     }
 }
