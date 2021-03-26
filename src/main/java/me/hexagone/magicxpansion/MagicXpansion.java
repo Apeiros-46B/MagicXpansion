@@ -90,7 +90,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
                 "&cArcanium Ore", "&7You can smelt this into an Ingot in a Smeltery");
 
         // Create Arcanium Ingot
-        SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK, "&c&lArcanium Ingot", "");
+        SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK, "&c&lArcanium Ingot");
         ItemStack[] ArcaniumIngotRecipe = {
                 ArcaniumOreItem, null, null,
                 null, null, null,
