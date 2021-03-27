@@ -1,14 +1,19 @@
 package me.hexagone.magicxpansion;
 
+import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.hexagone.magicxpansion.georesources.ArcaniumOreResource;
 import me.hexagone.magicxpansion.items.CraftingItem;
 import me.hexagone.magicxpansion.items.Lump;
 import me.hexagone.magicxpansion.items.ResourceIngot;
+import me.hexagone.magicxpansion.items.ShulkerAlloy;
+import me.hexagone.magicxpansion.items.RefinedShulkerAlloy;
 import me.hexagone.magicxpansion.tools.ContainerItem;
 import me.hexagone.magicxpansion.tools.InfinityCrossbow;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.entity.Shulker;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -117,6 +122,26 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
                 new ItemStack(Material.OBSIDIAN), ReinforcedShulkerShellItem, new ItemStack(Material.OBSIDIAN)
         };
 
+        // Create Normal and Enriched Shulkerium Alloys
+        SlimefunItemStack ShulkerAlloyItem = new SlimefunItemStack("SHULKER_ALLOY",
+                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODQxMWYxMjBjYTRlODgwZTdhMDBkYWM4YzE1NDM0MGY4ZDc0OGRmNTBhMmUzNjg0MGJmMTI4ZDk1NTQzMzU5ZCJ9fX0=",
+                "&dShulkerium Alloy Chunk", "", "&aThis highly radioactive alloy chunk is almost as durable as netherite.", "", LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
+        SlimefunItemStack RefinedShulkerAlloyItem = new SlimefunItemStack("REFINED_SHULKER_ALLOY",
+                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQwZGUxZmIxNDdkM2U1YjU3YzVkMjcxMTRkMzRjNjZkMDM4MDQzOWEzZjE4ZTA4OGJjZjQ3YzViMjM3YTcwZCJ9fX0=",
+                "&d&lEnriched Shulkerium Alloy Chunk", "", "&aForged by the Ancient Spirits of the &bOverworld&a, &cUnderworld&a, and &dEnd &adimensions,",
+                "&athis chunk of alloy is &l5 times &r&astronger than netherite.", "", LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
+
+        ItemStack[] ShulkerAlloyRecipe = {
+                ReinforcedShulkerShellItem, SlimefunItems.BLISTERING_INGOT_3, null,
+                null, null, null,
+                null, null, null
+        };
+        ItemStack[] RefinedShulkerAlloyRecipe = {
+                ShulkerAlloyItem, SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.HARDENED_METAL_INGOT,
+                SlimefunItems.CARBONADO, SlimefunItems.PLUTONIUM, new ItemStack(Material.NETHERITE_INGOT),
+                SlimefunItems.SYNTHETIC_SHULKER_SHELL, ArcaniumIngotItem, SlimefunItems.SYNTHETIC_EMERALD
+        };
+
         // Create Crossbow of Infinity
         SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW, "&6Crossbow of Infinity", "", "&aNever runs out of arrows.");
 
@@ -135,14 +160,18 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         EnderLump4.register(this);
         SlimefunItem EnderLump5 = new Lump(category, EnderLump5Item, RecipeType.MAGIC_WORKBENCH, EnderLump5Recipe);
         EnderLump5.register(this);
-        SlimefunItem ReinforcedShulkerShell = new CraftingItem(category, ReinforcedShulkerShellItem, RecipeType.ANCIENT_ALTAR, ReinforcedShulkerShellRecipe);
+        SlimefunItem ReinforcedShulkerShell = new CraftingItem(category, ReinforcedShulkerShellItem, RecipeType.SMELTERY, ReinforcedShulkerShellRecipe);
         ReinforcedShulkerShell.register(this);
-        SlimefunItem ReinforcedShulkerBox = new ContainerItem(category, ReinforcedShulkerBoxItem, RecipeType.ANCIENT_ALTAR, ReinforcedShulkerBoxRecipe);
+        SlimefunItem ReinforcedShulkerBox = new ContainerItem(category, ReinforcedShulkerBoxItem, RecipeType.ENHANCED_CRAFTING_TABLE, ReinforcedShulkerBoxRecipe);
         ReinforcedShulkerBox.register(this);
         SlimefunItem ArcaniumOre = new SlimefunItem(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
         ArcaniumOre.register(this);
         SlimefunItem ArcaniumIngot = new ResourceIngot(category, ArcaniumIngotItem, RecipeType.SMELTERY, ArcaniumIngotRecipe);
         ArcaniumIngot.register(this);
+        SlimefunItem ShulkerAlloyChunk = new ShulkerAlloy(category, ShulkerAlloyItem, RecipeType.HEATED_PRESSURE_CHAMBER, ShulkerAlloyRecipe);
+        ShulkerAlloyChunk.register(this);
+        SlimefunItem RefinedShulkerAlloyChunk = new RefinedShulkerAlloy(category, RefinedShulkerAlloyItem, RecipeType.SMELTERY, RefinedShulkerAlloyRecipe);
+        RefinedShulkerAlloyChunk.register(this);
         SlimefunItem InfinityCrossbow = new InfinityCrossbow(category, InfinityCrossbowItem, RecipeType.ANCIENT_ALTAR, InfinityCrossbowRecipe);
         InfinityCrossbow.register(this);
 
