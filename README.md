@@ -11,6 +11,6 @@ This addon adds more magical gadgets and talismans.
 - Tome of Knowledge Synchronization **(WIP)**
 
 ### List of tools/weapons/armor
-- Crossbow of Infinity **(priority)**
+- Crossbow of Infinity **(WIP)**
 - Nether Crossbow **(WIP)**
 - Crossbow of Rapidity **(WIP)**
