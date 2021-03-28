@@ -22,7 +22,7 @@ This addon adds more magical gadgets and talismans.
 
 ### Thanks to
 - DeepFriedDurp#9825 for coming up with ideas for items and talismans
-- (GallowsDove)[https://github.com/gallowsdove], waleks#6762 and (Mooy1)[https://github.com/mooy1] for giving feedback on ideas
-- (Slimefun Discord)[https://discord.gg/slimefun] for having a #programming-help channel
-- waleks#6762, (Mooy1)[https://github.com/mooy1], and (WalshyDev)[github.com/walshydev] for answering me in #programming-help
-- (TheBusyBiscuit)[https://github.com/thebusybiscuit] for creating the amazing plugin (Slimefun)[https://github.com/Slimefun/Slimefun4]
+- [GallowsDove](https://github.com/gallowsdove), waleks#6762 and [Mooy1](https://github.com/mooy1) for giving feedback on ideas
+- [Slimefun Discord](https://discord.gg/slimefun) for having a #programming-help channel
+- waleks#6762, [Mooy1](https://github.com/mooy1), and [WalshyDev](github.com/walshydev) for answering me in #programming-help
+- [TheBusyBiscuit](https://github.com/thebusybiscuit) for creating the amazing plugin [Slimefun](https://github.com/Slimefun/Slimefun4])
