@@ -5,7 +5,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.georesources.ArcaniumOreResource;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.CraftingItem;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.Lump;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.NonPlaceableResource;
+import me.hexagone.magicxpansion.setup.magicxpansionitems.items.ArcaniumOreChunk;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.RefinedShulkerAlloy;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.ResourceIngot;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.ShulkerAlloy;
@@ -21,13 +21,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.potion.Potion;
-import org.bukkit.potion.PotionData;
-import org.bukkit.potion.PotionEffectType;
-import org.bukkit.potion.PotionType;
 
 import static me.hexagone.magicxpansion.setup.MagicXpansionItems.*;
 
@@ -78,7 +72,7 @@ public class MagicXpansionItemSetup {
         FilledKnowledgeVessel.register((SlimefunAddon) plugin);
 
         // Register Arcanium Ore and Arcanium Ingot
-        SlimefunItem ArcaniumOre = new NonPlaceableResource(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
+        SlimefunItem ArcaniumOre = new ArcaniumOreChunk(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
         ArcaniumOre.register((SlimefunAddon) plugin);
         SlimefunItem ArcaniumIngot = new ResourceIngot(category, ArcaniumIngotItem, RecipeType.SMELTERY,
                 new ItemStack[] {
@@ -128,6 +122,7 @@ public class MagicXpansionItemSetup {
                 SlimefunItems.MAGIC_SUGAR, new ItemStack(Material.CROSSBOW), SlimefunItems.MAGIC_SUGAR,
                 SlimefunItems.ENCHANTMENT_RUNE, SlimefunItems.MAGICAL_GLASS, SlimefunItems.ENDER_RUNE
                 });
+        RapidCrossbow.register((SlimefunAddon) plugin);
 
         // Register GEO-Resources
         ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(plugin, ArcaniumOreItem);
