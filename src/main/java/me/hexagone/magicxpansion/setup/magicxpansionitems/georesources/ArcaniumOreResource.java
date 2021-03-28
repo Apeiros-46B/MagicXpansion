@@ -1,4 +1,4 @@
-package me.hexagone.magicxpansion.georesources;
+package me.hexagone.magicxpansion.setup.magicxpansionitems.georesources;
 
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import org.bukkit.NamespacedKey;
