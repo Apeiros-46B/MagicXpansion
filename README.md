@@ -8,15 +8,16 @@ This addon adds more magical gadgets and talismans.
 - Ender and Magical lumps IV and V
 - Arcanium Ore (GEO-mined in the End)
 - Arcanium Ingot
-- Reinforced Shulker Shell **(WIP)**
-- Shulkerium Alloy **(WIP)**
-- Enriched Shulkerium Alloy **(WIP)**
+- Reinforced Shulker Shell 
+- Reinforced Shulker Box
+- Shulkerium Alloy 
+- Enriched Shulkerium Alloy 
 - Tome of Knowledge Synchronization **(WIP)**
 
 ### List of tools/weapons/armor
 - Crossbow of Infinity **(WIP)**
 - Nether Crossbow **(WIP)**
-- Crossbow of Rapidity **(WIP)**
+- Crossbow of Rapidity 
 
 ## Credits:
 
