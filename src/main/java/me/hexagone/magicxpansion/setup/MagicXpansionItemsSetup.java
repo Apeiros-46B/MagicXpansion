@@ -3,13 +3,9 @@ package me.hexagone.magicxpansion.setup;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.georesources.ArcaniumOreResource;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.CraftingItem;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.Lump;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.ArcaniumOreChunk;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.RefinedShulkerAlloy;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.ResourceIngot;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.items.ShulkerAlloy;
+import me.hexagone.magicxpansion.setup.magicxpansionitems.items.*;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.ContainerItem;
+import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.EnergizedWindStaff;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.FilledKnowledgeVessel;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.weapons.InfinityCrossbow;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.KnowledgeVessel;
@@ -25,7 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import static me.hexagone.magicxpansion.setup.MagicXpansionItems.*;
 
-public class MagicXpansionItemSetup {
+public class MagicXpansionItemsSetup {
 
     public static void RegisterItems(JavaPlugin plugin) {
         // Create category
@@ -74,7 +70,7 @@ public class MagicXpansionItemSetup {
         // Register Arcanium Ore and Arcanium Ingot
         SlimefunItem ArcaniumOre = new ArcaniumOreChunk(category, ArcaniumOreItem, RecipeType.GEO_MINER, new ItemStack[9]);
         ArcaniumOre.register((SlimefunAddon) plugin);
-        SlimefunItem ArcaniumIngot = new ResourceIngot(category, ArcaniumIngotItem, RecipeType.SMELTERY,
+        SlimefunItem ArcaniumIngot = new Resource(category, ArcaniumIngotItem, RecipeType.SMELTERY,
                 new ItemStack[] {
                 ArcaniumOreItem, null, null,
                 null, null, null,
@@ -124,9 +120,22 @@ public class MagicXpansionItemSetup {
                 });
         RapidCrossbow.register((SlimefunAddon) plugin);
 
+        // Register Core of Energy and Energized Wind Staff
+        SlimefunItem EnergyCore = new EnergyCore(category, EnergyCoreItem, RecipeType.PRESSURE_CHAMBER,
+                new ItemStack[] {
+                        ShulkerAlloyItem, SlimefunItems.URANIUM, ShulkerAlloyItem,
+                        MagicLump5Item, SlimefunItems.CARBONADO, EnderLump5Item,
+                        ShulkerAlloyItem, SlimefunItems.LIGHTNING_RUNE, ShulkerAlloyItem});
+        EnergyCore.register((SlimefunAddon) plugin);
+        SlimefunItem EnergizedWindStaff = new EnergizedWindStaff(category, EnergizedWindStaffItem, RecipeType.ANCIENT_ALTAR,
+                new ItemStack[] {
+                        SlimefunItems.ELYTRA_SCALE, SlimefunItems.STAFF_WIND, SlimefunItems.AIR_RUNE,
+                        EnergyCoreItem, SlimefunItems.INFUSED_MAGNET, EnergyCoreItem,
+                        SlimefunItems.ELECTRO_MAGNET, SlimefunItems.STAFF_WIND, SlimefunItems.ELECTRO_MAGNET});
+        EnergizedWindStaff.register((SlimefunAddon) plugin);
+
         // Register GEO-Resources
         ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(plugin, ArcaniumOreItem);
         arcaniumOreResource.register();
     }
-
 }

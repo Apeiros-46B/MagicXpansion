@@ -19,14 +19,20 @@ public final class MagicXpansionItems {
 
     public static final SlimefunItemStack ArcaniumOreItem = new SlimefunItemStack("ARCANIUM_ORE",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E2ZGNmMjc1Y2Y1OGM2NGNhN2I0ZDFmYzRlYTAwOWEyYjU2OTk1ZjUxYjU0OTg3NGJhNzg5ODZjZGVhYjdkMyJ9fX0=",
-            "&cArcanium Ore", "&7You can smelt this into an Ingot in a Smeltery");
-    public static final SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK, "&c&lArcanium Ingot");
+            "&cArcanium Ore", "&7GEO-Mined in the End Dimension", "&7You can smelt this into an Ingot in a Smeltery");
+    public static final SlimefunItemStack ArcaniumIngotItem = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK,
+            "&c&lArcanium Ingot", "&5A magical ingot that glows with power");
+
+    static {
+        ArcaniumIngotItem.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        ArcaniumIngotItem.addFlags(ItemFlag.HIDE_ENCHANTS);
+    }
 
     public static final SlimefunItemStack ReinforcedShulkerShellItem = new SlimefunItemStack("REINFORCED_SHULKER_SHELL", Material.SHULKER_SHELL, "&6Reinforced Shulker Shell", "", "&aForged from the strongest of material,", "&athis Shulker Shell is almost unbreakable.");
     public static final SlimefunItemStack ReinforcedShulkerBoxItem = new SlimefunItemStack("REINFORCED_SHULKER_BOX", Material.SHULKER_BOX, "&5&lReinforced Shulker Box", "", "&a6-row storage", "&aBlast-resistant");
 
-    public static final SlimefunItemStack ShulkerAlloyItem = new SlimefunItemStack("SHULKER_ALLOY", Material.IRON_INGOT, "&dShulkerium Alloy Ingot",
-            "", "&aThis highly radioactive ingot is almost as durable as netherite.", "", LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
+    public static final SlimefunItemStack ShulkerAlloyItem = new SlimefunItemStack("SHULKER_ALLOY", Material.IRON_INGOT,
+            "&dShulkerium Alloy Ingot", "", "&aThis highly radioactive ingot is almost as durable as netherite.", "", LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
     static {
         ShulkerAlloyItem.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
@@ -56,16 +62,30 @@ public final class MagicXpansionItems {
         FilledKnowledgeVessel.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
-    public static final SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW, "&6Crossbow of Infinity", "", "&aNever runs out of arrows.");
+    public static final SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW,
+            "&6Crossbow of Infinity", "", "&aNever runs out of arrows.");
 
     static {
         InfinityCrossbowItem.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
     }
 
-    public static final SlimefunItemStack RapidCrossbowItem = new SlimefunItemStack("RAPID_CROSSBOW", Material.CROSSBOW, "&6Crossbow of Rapidity", "", "&aShoots at unparallelled speeds.");
+    public static final SlimefunItemStack RapidCrossbowItem = new SlimefunItemStack("RAPID_CROSSBOW", Material.CROSSBOW,
+            "&6Crossbow of Rapidity", "", "&aShoots at unparallelled speeds.");
 
     static {
         RapidCrossbowItem.addUnsafeEnchantment(Enchantment.QUICK_CHARGE, 4);
         RapidCrossbowItem.addUnsafeEnchantment(Enchantment.PIERCING, 5);
+    }
+
+    public static final SlimefunItemStack EnergyCoreItem = new SlimefunItemStack("ENERGY_CORE",
+            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODNlZDRjZTIzOTMzZTY2ZTA0ZGYxNjA3MDY0NGY3NTk5ZWViNTUzMDdmN2VhZmU4ZDkyZjQwZmIzNTIwODYzYyJ9fX0=",
+            "&bCore of Energy", "", "&a&oIt radiates with a forgotten energy...", "",
+            LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
+    public static final SlimefunItemStack EnergizedWindStaffItem = new SlimefunItemStack("ENERGIZED_STAFF_WIND", Material.BLAZE_ROD,
+            "&6&lEnergized Staff &7- &bWind", "", "&7Element: &b&oWind", "", "&eRight Click &7to launch yourself forward.", "&aDoesn't require an energy source");
+
+    static {
+        EnergizedWindStaffItem.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        EnergizedWindStaffItem.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 }

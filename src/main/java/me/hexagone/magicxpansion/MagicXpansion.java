@@ -4,7 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
-import me.hexagone.magicxpansion.setup.MagicXpansionItemSetup;
+import me.hexagone.magicxpansion.setup.MagicXpansionItemsSetup;
 
 public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
 
@@ -17,7 +17,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
             // You could start an Auto-Updater for example
         }
 
-        MagicXpansionItemSetup.RegisterItems(this);
+        MagicXpansionItemsSetup.RegisterItems(this);
     }
 
     @Override
