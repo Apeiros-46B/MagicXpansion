@@ -1,5 +1,7 @@
 # MagicXpansion
 
+### Requires Java 11
+
 This addon adds more magical gadgets and talismans.
 
 ## List of added items:
