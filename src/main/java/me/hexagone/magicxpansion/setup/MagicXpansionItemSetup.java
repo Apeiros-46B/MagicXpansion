@@ -67,7 +67,7 @@ public class MagicXpansionItemSetup {
                         null, MagicLump5Item, null});
         KnowledgeVessel.register((SlimefunAddon) plugin);
 
-        SlimefunItem FilledKnowledgeVessel = new FilledKnowledgeVessel(category, MagicXpansionItems.FilledKnowledgeVessel, RecipeType.MAGIC_WORKBENCH, new ItemStack[9]);
+        SlimefunItem FilledKnowledgeVessel = new FilledKnowledgeVessel(category, MagicXpansionItems.FilledKnowledgeVessel, RecipeType.MAGIC_WORKBENCH, null);
         FilledKnowledgeVessel.setHidden(true);
         FilledKnowledgeVessel.register((SlimefunAddon) plugin);
 
@@ -96,7 +96,7 @@ public class MagicXpansionItemSetup {
         ReinforcedShulkerBox.register((SlimefunAddon) plugin);
 
         // Register Shulkerium Alloys
-        SlimefunItem ShulkerAlloyIngot = new ShulkerAlloy(category, ShulkerAlloyItem, RecipeType.HEATED_PRESSURE_CHAMBER,
+        SlimefunItem ShulkerAlloyIngot = new ShulkerAlloy(category, ShulkerAlloyItem, RecipeType.PRESSURE_CHAMBER,
                 new ItemStack[] {
                 ReinforcedShulkerShellItem, SlimefunItems.BLISTERING_INGOT_3, null, null, null, null, null, null, null});
         ShulkerAlloyIngot.register((SlimefunAddon) plugin);
