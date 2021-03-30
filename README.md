@@ -12,12 +12,14 @@ This addon adds more magical gadgets and talismans.
 - Reinforced Shulker Box
 - Shulkerium Alloy 
 - Enriched Shulkerium Alloy 
+- Core of Energy
 - Tome of Knowledge Synchronization **(WIP)**
 
 ### List of tools/weapons/armor
 - Crossbow of Infinity **(WIP)**
 - Nether Crossbow **(WIP)**
 - Crossbow of Rapidity 
+- Energized Wind Staff
 
 ## Credits:
 
