@@ -1,5 +1,6 @@
 package me.hexagone.magicxpansion.setup.magicxpansionitems.tools;
 
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
@@ -34,9 +35,6 @@ public class FilledKnowledgeVessel extends SimpleSlimefunItem<ItemUseHandler> im
                 }
 
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1F, 0.5F);
-
-                ItemUtils.consumeItem(e.getItem(), false);
-                e.cancel();
             }
         };
     }

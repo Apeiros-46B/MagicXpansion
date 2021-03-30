@@ -67,7 +67,7 @@ public class MagicXpansionItemSetup {
                         null, MagicLump5Item, null});
         KnowledgeVessel.register((SlimefunAddon) plugin);
 
-        SlimefunItem FilledKnowledgeVessel = new FilledKnowledgeVessel(category, MagicXpansionItems.FilledKnowledgeVessel, RecipeType.MAGIC_WORKBENCH, null);
+        SlimefunItem FilledKnowledgeVessel = new FilledKnowledgeVessel(category, MagicXpansionItems.FilledKnowledgeVessel, RecipeType.NULL, null);
         FilledKnowledgeVessel.setHidden(true);
         FilledKnowledgeVessel.register((SlimefunAddon) plugin);
 
