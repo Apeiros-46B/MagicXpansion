@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.georesources.ArcaniumOreResource;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.*;
+import me.hexagone.magicxpansion.setup.magicxpansionitems.multiblocks.CarbonCrusherMachine;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.ContainerItem;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.EnergizedWindStaff;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.tools.FilledKnowledgeVessel;
@@ -13,6 +14,7 @@ import me.hexagone.magicxpansion.setup.magicxpansionitems.weapons.RapidCrossbow;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -55,6 +57,10 @@ public class MagicXpansionItemsSetup {
                 null, null, null});
         EnderLump5.register((SlimefunAddon) plugin);
 
+        // Register Carbon Crusher (WIP)
+        CarbonCrusherMachine CarbonCrusher = new CarbonCrusherMachine(category, new SlimefunItemStack("CARBON_CRUSHER", Material.PISTON, "&bCarbon Crusher", "", "&bCrushes Diamonds into Carbon"));
+        CarbonCrusher.register((SlimefunAddon) plugin);
+
         // Register Empty and Filled Knowledge Vessels
         SlimefunItem KnowledgeVessel = new KnowledgeVessel(category, MagicXpansionItems.KnowledgeVessel, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[] {
@@ -92,7 +98,7 @@ public class MagicXpansionItemsSetup {
         ReinforcedShulkerBox.register((SlimefunAddon) plugin);
 
         // Register Shulkerium Alloys
-        SlimefunItem ShulkerAlloyIngot = new ShulkerAlloy(category, ShulkerAlloyItem, RecipeType.PRESSURE_CHAMBER,
+        SlimefunItem ShulkerAlloyIngot = new ShulkerAlloy(category, ShulkerAlloyItem, RecipeType.SMELTERY,
                 new ItemStack[] {
                 ReinforcedShulkerShellItem, SlimefunItems.BLISTERING_INGOT_3, null, null, null, null, null, null, null});
         ShulkerAlloyIngot.register((SlimefunAddon) plugin);
@@ -121,7 +127,7 @@ public class MagicXpansionItemsSetup {
         RapidCrossbow.register((SlimefunAddon) plugin);
 
         // Register Core of Energy and Energized Wind Staff
-        SlimefunItem EnergyCore = new EnergyCore(category, EnergyCoreItem, RecipeType.PRESSURE_CHAMBER,
+        SlimefunItem EnergyCore = new EnergyCore(category, EnergyCoreItem, RecipeType.SMELTERY,
                 new ItemStack[] {
                         ShulkerAlloyItem, SlimefunItems.URANIUM, ShulkerAlloyItem,
                         MagicLump5Item, SlimefunItems.CARBONADO, EnderLump5Item,
