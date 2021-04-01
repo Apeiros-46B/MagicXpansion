@@ -63,6 +63,14 @@ public class MagicXpansionItemsSetup {
         MultiBlockMachine CarbonCrusher = new CarbonCrusherMachine(category, new SlimefunItemStack("CARBON_CRUSHER", Material.PISTON, "&bCarbon Crusher", "", "&bCrushes Diamonds into Carbon"));
         CarbonCrusher.register((SlimefunAddon) plugin);
 
+        // Register Stealthy Energy Regulator
+        SlimefunItem StealthyEnergyRegulator = new StealthyEnergyRegulator(category, StealthyEnergyRegulatorItem, RecipeType.MAGIC_WORKBENCH,
+                new ItemStack[] {
+                        ArcaniumIngotItem, SlimefunItems.MAGICAL_GLASS, ArcaniumIngotItem,
+                        SlimefunItems.ENERGY_CONNECTOR, SlimefunItems.ENERGY_REGULATOR, SlimefunItems.ENERGY_REGULATOR,
+                        ArcaniumIngotItem, SlimefunItems.MAGICAL_GLASS, ArcaniumIngotItem});
+        StealthyEnergyRegulator.register((SlimefunAddon) plugin);
+
         // Register Empty and Filled Knowledge Vessels
         SlimefunItem KnowledgeVessel = new KnowledgeVessel(category, MagicXpansionItems.KnowledgeVessel, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[] {
@@ -141,14 +149,6 @@ public class MagicXpansionItemsSetup {
                         EnergyCoreItem, SlimefunItems.INFUSED_MAGNET, EnergyCoreItem,
                         SlimefunItems.ELECTRO_MAGNET, SlimefunItems.STAFF_WIND, SlimefunItems.ELECTRO_MAGNET});
         EnergizedWindStaff.register((SlimefunAddon) plugin);
-
-        // Register Stealthy Energy Regulator
-        SlimefunItem StealthyEnergyRegulator = new StealthyEnergyRegulator(category, EnergizedWindStaffItem, RecipeType.ANCIENT_ALTAR,
-                new ItemStack[] {
-                        ArcaniumIngotItem, SlimefunItems.MAGICAL_GLASS, ArcaniumIngotItem,
-                        SlimefunItems.ENERGY_CONNECTOR, SlimefunItems.ENERGY_REGULATOR, SlimefunItems.ENERGY_REGULATOR,
-                        ArcaniumIngotItem, SlimefunItems.MAGICAL_GLASS, ArcaniumIngotItem});
-        StealthyEnergyRegulator.register((SlimefunAddon) plugin);
 
         // Register GEO-Resources
         ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(plugin, ArcaniumOreItem);
