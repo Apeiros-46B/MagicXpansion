@@ -3,7 +3,6 @@ package me.hexagone.magicxpansion.setup;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import me.hexagone.magicxpansion.setup.magicxpansionitems.electric.StealthyEnergyRegulator;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.georesources.ArcaniumOreResource;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.items.*;
 import me.hexagone.magicxpansion.setup.magicxpansionitems.multiblocks.CarbonCrusherMachine;
@@ -62,14 +61,6 @@ public class MagicXpansionItemsSetup {
         // Register Carbon Crusher
         MultiBlockMachine CarbonCrusher = new CarbonCrusherMachine(category, new SlimefunItemStack("CARBON_CRUSHER", Material.PISTON, "&bCarbon Crusher", "", "&bCrushes Diamonds into Carbon"));
         CarbonCrusher.register((SlimefunAddon) plugin);
-
-        // Register Stealthy Energy Regulator
-        SlimefunItem StealthyEnergyRegulator = new StealthyEnergyRegulator(category, StealthyEnergyRegulatorItem, RecipeType.MAGIC_WORKBENCH,
-                new ItemStack[] {
-                        ArcaniumIngotItem, SlimefunItems.MAGICAL_GLASS, ArcaniumIngotItem,
-                        SlimefunItems.ENERGY_CONNECTOR, SlimefunItems.ENERGY_REGULATOR, SlimefunItems.ENERGY_REGULATOR,
-                        ArcaniumIngotItem, SlimefunItems.MAGICAL_GLASS, ArcaniumIngotItem});
-        StealthyEnergyRegulator.register((SlimefunAddon) plugin);
 
         // Register Empty and Filled Knowledge Vessels
         SlimefunItem KnowledgeVessel = new KnowledgeVessel(category, MagicXpansionItems.KnowledgeVessel, RecipeType.MAGIC_WORKBENCH,

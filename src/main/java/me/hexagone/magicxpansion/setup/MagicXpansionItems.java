@@ -88,8 +88,4 @@ public final class MagicXpansionItems {
         EnergizedWindStaffItem.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
         EnergizedWindStaffItem.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
-
-    public static final SlimefunItemStack StealthyEnergyRegulatorItem = new SlimefunItemStack("STEALTH_ENERGY_REGULATOR",
-            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDc4ZjJiN2U1ZTc1NjM5ZWE3ZmI3OTZjMzVkMzY0YzRkZjI4YjQyNDNlNjZiNzYyNzdhYWRjZDYyNjEzMzcifX19",
-            "&6&lStealthy Energy Regulator", "", "&fCore component of an Energy Network", "&7Doesn't show a Hologram");
 }
