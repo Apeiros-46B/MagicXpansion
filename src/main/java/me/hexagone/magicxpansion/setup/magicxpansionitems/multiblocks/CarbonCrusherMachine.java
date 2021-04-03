@@ -29,7 +29,7 @@ public class CarbonCrusherMachine extends MultiBlockMachine {
         super(category, item, new ItemStack[]{
                         new CustomItem(Material.PISTON, "Piston (Pointing inwards)"), new CustomItem(Material.DISPENSER, "Dispenser (Facing down)"), new CustomItem(Material.PISTON, "Piston (Pointing inwards)"),
                         new ItemStack(Material.NETHER_BRICK_STAIRS), new ItemStack(Material.NETHER_BRICK_FENCE), new ItemStack(Material.NETHER_BRICK_STAIRS),
-                        new ItemStack(Material.NETHER_BRICK_FENCE), new ItemStack(Material.STONECUTTER), new ItemStack(Material.NETHER_BRICK_FENCE)},
+                        new ItemStack(Material.NETHER_BRICK_WALL), new ItemStack(Material.MAGMA_BLOCK), new ItemStack(Material.NETHER_BRICK_WALL)},
                 BlockFace.SELF);
 
     }
@@ -47,7 +47,7 @@ public class CarbonCrusherMachine extends MultiBlockMachine {
 
     @Override
     public void onInteract(Player p, Block b) {
-        Block dispBlock = b.getRelative(BlockFace.DOWN);
+        Block dispBlock = b.getRelative(BlockFace.UP);
         BlockState state = PaperLib.getBlockState(dispBlock, false).getState();
 
         if (state instanceof Dispenser) {
