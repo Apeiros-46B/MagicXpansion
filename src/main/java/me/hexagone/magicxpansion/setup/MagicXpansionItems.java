@@ -58,7 +58,7 @@ public final class MagicXpansionItems {
             "&a&lVessel of Knowledge");
 
     public static final SlimefunItemStack NetherStarBlockItem = new SlimefunItemStack("NETHER_STAR_BLOCK", Material.IRON_BLOCK,
-            "&dNether Star Block", "", "&cForged from the hearts of the ancient Netheric wraiths,", "&cit emanates with the power of Hades.",
+            "&dNether Star Block", "", "&cForged from the hearts of the ancient Netheric wraiths,", "&cit emanates with the power of Hades.", "",
             LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
     static {

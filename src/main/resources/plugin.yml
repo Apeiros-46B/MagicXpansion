@@ -4,7 +4,7 @@ name: MagicXpansion
 ## CHANGE this to your username.
 author: Hexagone
 
-## CHANGE this to a meaninful but short description of your plugin.
+## CHANGE this to a meaningful but short description of your plugin.
 description: A Slimefun4 addon that adds more magical items and more talismans.
 
 ## CHANGE this to the path of the class that extends JavaPlugin.

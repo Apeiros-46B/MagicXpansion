@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.hexagone.magicxpansion.setup.MagicXpansionItems;
-import me.mrCookieSlime.Slimefun.api.Slimefun;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Effect;
 import org.bukkit.Material;
