@@ -24,10 +24,10 @@ public class FilledKnowledgeVessel extends SimpleSlimefunItem<ItemUseHandler> im
         return e -> {
             Player p = e.getPlayer();
 
-            if (e.getItem().equals(MagicXpansionItems.FilledKnowledgeVessel) && (!e.getClickedBlock().isPresent() || !(e.getClickedBlock().get().getType().isInteractable()))) {
+            if (e.getItem().equals(MagicXpansionItems.FilledKnowledgeVesselItem) && (!e.getClickedBlock().isPresent() || !(e.getClickedBlock().get().getType().isInteractable()))) {
                 p.setLevel(p.getLevel() + 16);
 
-                ItemStack item = MagicXpansionItems.KnowledgeVessel.clone();
+                ItemStack item = MagicXpansionItems.KnowledgeVesselItem.clone();
 
                 if (!p.getInventory().addItem(item).isEmpty()) {
                     // The Item could not be added, let's drop it to the ground (fixes #2728)

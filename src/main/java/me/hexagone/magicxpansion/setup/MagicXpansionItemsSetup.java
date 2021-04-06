@@ -58,19 +58,28 @@ public class MagicXpansionItemsSetup {
                 null, null, null});
         EnderLump5.register((SlimefunAddon) plugin);
 
+        // Register Nether Star Block
+        SlimefunItem NetherStarBlock = new NetherStarBlock(category, NetherStarBlockItem, RecipeType.ANCIENT_ALTAR,
+                new ItemStack[] {
+                        new ItemStack(Material.NETHER_STAR), SlimefunItems.STRANGE_NETHER_GOO, new ItemStack(Material.NETHER_STAR),
+                        SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.NETHERITE_BLOCK), SlimefunItems.BLISTERING_INGOT_3,
+                        new ItemStack(Material.NETHER_STAR), SlimefunItems.STRANGE_NETHER_GOO, new ItemStack(Material.NETHER_STAR)
+                });
+        NetherStarBlock.register((SlimefunAddon) plugin);
+
         // Register Carbon Crusher
         MultiBlockMachine CarbonCrusher = new CarbonCrusherMachine(category, new SlimefunItemStack("CARBON_CRUSHER", Material.PISTON, "&bCarbon Crusher", "", "&bCrushes Diamonds into Carbon"));
         CarbonCrusher.register((SlimefunAddon) plugin);
 
         // Register Empty and Filled Knowledge Vessels
-        SlimefunItem KnowledgeVessel = new KnowledgeVessel(category, MagicXpansionItems.KnowledgeVessel, RecipeType.MAGIC_WORKBENCH,
+        SlimefunItem KnowledgeVessel = new KnowledgeVessel(category, MagicXpansionItems.KnowledgeVesselItem, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[] {
                         null, null, null,
                         MagicLump5Item, SlimefunItems.MAGICAL_GLASS, MagicLump5Item,
                         null, MagicLump5Item, null});
         KnowledgeVessel.register((SlimefunAddon) plugin);
 
-        SlimefunItem FilledKnowledgeVessel = new FilledKnowledgeVessel(category, MagicXpansionItems.FilledKnowledgeVessel, RecipeType.NULL, null);
+        SlimefunItem FilledKnowledgeVessel = new FilledKnowledgeVessel(category, FilledKnowledgeVesselItem, RecipeType.NULL, null);
         FilledKnowledgeVessel.setHidden(true);
         FilledKnowledgeVessel.register((SlimefunAddon) plugin);
 

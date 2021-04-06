@@ -28,7 +28,7 @@ public class KnowledgeVessel extends SimpleSlimefunItem<ItemUseHandler> implemen
             if (p.getLevel() >= 16 && (!e.getClickedBlock().isPresent() || !(e.getClickedBlock().get().getType().isInteractable()))) {
                 p.setLevel(p.getLevel() - 16);
 
-                ItemStack item = MagicXpansionItems.FilledKnowledgeVessel;
+                ItemStack item = MagicXpansionItems.FilledKnowledgeVesselItem;
 
                 if (!p.getInventory().addItem(item).isEmpty()) {
                     // The Item could not be added, let's drop it to the ground (fixes #2728)

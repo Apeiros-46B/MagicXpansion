@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
+import me.hexagone.magicxpansion.setup.MagicXpansionItems;
+import me.mrCookieSlime.Slimefun.api.Slimefun;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Effect;
 import org.bukkit.Material;
@@ -29,7 +31,7 @@ public class CarbonCrusherMachine extends MultiBlockMachine {
         super(category, item, new ItemStack[]{
                         new CustomItem(Material.PISTON, "Piston (Pointing inwards)"), new CustomItem(Material.DISPENSER, "Dispenser (Facing down)"), new CustomItem(Material.PISTON, "Piston (Pointing inwards)"),
                         new ItemStack(Material.NETHER_BRICK_STAIRS), new ItemStack(Material.NETHER_BRICK_FENCE), new ItemStack(Material.NETHER_BRICK_STAIRS),
-                        new ItemStack(Material.NETHER_BRICK_WALL), new ItemStack(Material.MAGMA_BLOCK), new ItemStack(Material.NETHER_BRICK_WALL)},
+                        new ItemStack(Material.NETHER_BRICK_WALL), MagicXpansionItems.NetherStarBlockItem, new ItemStack(Material.NETHER_BRICK_WALL)},
                 BlockFace.SELF);
 
     }
@@ -37,6 +39,9 @@ public class CarbonCrusherMachine extends MultiBlockMachine {
     @Override
     protected void registerDefaultRecipes(List<ItemStack> recipes) {
         recipes.add(new ItemStack(Material.DIAMOND, 1));
+        recipes.add(new SlimefunItemStack(SlimefunItems.CARBON, 1));
+
+        recipes.add(new ItemStack(Material.DIAMOND_ORE, 1));
         recipes.add(new SlimefunItemStack(SlimefunItems.CARBON, 4));
     }
 

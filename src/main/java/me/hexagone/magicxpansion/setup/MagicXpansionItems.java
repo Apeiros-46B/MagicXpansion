@@ -49,17 +49,21 @@ public final class MagicXpansionItems {
         RefinedShulkerAlloyItem.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
-    public static final SlimefunItemStack KnowledgeVessel = new SlimefunItemStack("VESSEL_OF_KNOWLEDGE",
+    public static final SlimefunItemStack KnowledgeVesselItem = new SlimefunItemStack("VESSEL_OF_KNOWLEDGE",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRhMTUxYTQ2OWQzMjA2ZWUwNmFkZTczMWFmZDNjZDE1N2I1ZmI0Nzg5OTdiY2Y5MGMyNDBiMGJkNmMyNjliYyJ9fX0=",
             "&c&lVessel of Knowledge", "", "&fAllows you to store some of", "&fyour Experience in a Bottle", "&7Cost: &a16 Levels", "&aReusable.");
 
-    public static final SlimefunItemStack FilledKnowledgeVessel = new SlimefunItemStack("FILLED_VESSEL_OF_KNOWLEDGE",
+    public static final SlimefunItemStack FilledKnowledgeVesselItem = new SlimefunItemStack("FILLED_VESSEL_OF_KNOWLEDGE",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA1NGMyOWM3ODA5MDQ3MWMxZWEwNThiZDY0MTg5NzM5MWM5ZTQ2OTRhYTlkMTQwYWZiYmE4ZDBjYzQzNjM3In19fQ==",
             "&a&lVessel of Knowledge");
 
+    public static final SlimefunItemStack NetherStarBlockItem = new SlimefunItemStack("NETHER_STAR_BLOCK", Material.IRON_BLOCK,
+            "&dNether Star Block", "", "&cForged from the hearts of the ancient Netheric wraiths,", "&cit emanates with the power of Hades.",
+            LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
+
     static {
-        FilledKnowledgeVessel.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
-        FilledKnowledgeVessel.addFlags(ItemFlag.HIDE_ENCHANTS);
+        NetherStarBlockItem.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        NetherStarBlockItem.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack InfinityCrossbowItem = new SlimefunItemStack("INFINITY_CROSSBOW", Material.CROSSBOW,
