@@ -39,6 +39,7 @@ This addon adds more magical gadgets and talismans.
 
 ### List of machines/multiblocks:
 - Carbon Crusher
+- EXP Solidifier **(WIP)**
 - Magic Generator **(WIP)**
 - Soul Reactor **(WIP)**
 
