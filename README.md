@@ -11,6 +11,7 @@
 - [FoxyMachines](https://github.com/GallowsDove/FoxyMachines)
 
 This addon adds more magical gadgets and talismans.
+
 **Disclaimer: Some items in this addon can potentially be OP. If you do not want an item on your server, disable it in Items.yml.**
 
 ## List of added items:
