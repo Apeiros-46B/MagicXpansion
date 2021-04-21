@@ -1,6 +1,7 @@
 package me.hexagone.magicxpansion.setup.magicxpansionitems.electric;
 
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import me.gallowsdove.foxymachines.Items;
 import me.hexagone.magicxpansion.setup.MagicXpansionItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
@@ -34,15 +35,15 @@ public class MagicGenerator extends AGenerator {
         registerFuel(new MachineFuel(1, new ItemStack(SlimefunItems.MAGIC_LUMP_1)));
         registerFuel(new MachineFuel(2, new ItemStack(SlimefunItems.MAGIC_LUMP_2)));
         registerFuel(new MachineFuel(4, new ItemStack(SlimefunItems.MAGIC_LUMP_3)));
-        registerFuel(new MachineFuel(8, new ItemStack(MagicXpansionItems.MagicLump4Item)));
-        registerFuel(new MachineFuel(16, new ItemStack(MagicXpansionItems.MagicLump5Item)));
+        registerFuel(new MachineFuel(8, new ItemStack(Items.MAGIC_LUMP_4)));
+        registerFuel(new MachineFuel(16, new ItemStack(Items.MAGIC_LUMP_5)));
 
         // Ender Lumps
         registerFuel(new MachineFuel(1, new ItemStack(SlimefunItems.ENDER_LUMP_1)));
         registerFuel(new MachineFuel(2, new ItemStack(SlimefunItems.ENDER_LUMP_2)));
         registerFuel(new MachineFuel(4, new ItemStack(SlimefunItems.ENDER_LUMP_3)));
-        registerFuel(new MachineFuel(8, new ItemStack(MagicXpansionItems.EnderLump4Item)));
-        registerFuel(new MachineFuel(16, new ItemStack(MagicXpansionItems.EnderLump5Item)));
+        registerFuel(new MachineFuel(8, new ItemStack(MagicXpansionItems.ENDER_LUMP_4)));
+        registerFuel(new MachineFuel(16, new ItemStack(MagicXpansionItems.ENDER_LUMP_5)));
 
         // Low-tier Magical Items
         registerFuel(new MachineFuel(8, new ItemStack(SlimefunItems.MAGICAL_BOOK_COVER)));

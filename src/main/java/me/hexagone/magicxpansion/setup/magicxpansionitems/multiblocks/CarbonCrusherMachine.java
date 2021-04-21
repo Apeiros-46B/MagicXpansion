@@ -30,7 +30,7 @@ public class CarbonCrusherMachine extends MultiBlockMachine {
         super(category, item, new ItemStack[]{
                         new CustomItem(Material.PISTON, "Piston (Pointing inwards)"), new CustomItem(Material.DISPENSER, "Dispenser (Facing down)"), new CustomItem(Material.PISTON, "Piston (Pointing inwards)"),
                         new ItemStack(Material.NETHER_BRICK_STAIRS), new ItemStack(Material.NETHER_BRICK_FENCE), new ItemStack(Material.NETHER_BRICK_STAIRS),
-                        new ItemStack(Material.NETHER_BRICK_WALL), MagicXpansionItems.NetherStarBlockItem, new ItemStack(Material.NETHER_BRICK_WALL)},
+                        new ItemStack(Material.NETHER_BRICK_WALL), MagicXpansionItems.NETHER_STAR_BLOCK, new ItemStack(Material.NETHER_BRICK_WALL)},
                 BlockFace.SELF);
 
     }
