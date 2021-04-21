@@ -29,16 +29,16 @@ This addon adds more magical gadgets and talismans.
 - Crossbow of Infinity **(WIP)**
 - Nether Crossbow **(WIP)**
 - Crossbow of Rapidity 
-- Poseidon's Fury **WIP**
+- Poseidon's Fury **(WIP)**
 - Energized Wind Staff
 - Tome of Knowledge Synchronization **(WIP)**
-- Cactus Thorn Remover **WIP**
-- Cake Grabber **WIP**
+- Cactus Thorn Remover **(WIP)**
+- Cake Grabber **(WIP)**
 
 ### List of machines/multiblocks:
 - Carbon Crusher
-- Magic Generator **WIP**
-- Soul Reactor **WIP**
+- Magic Generator **(WIP)**
+- Soul Reactor **(WIP)**
 
 ## Credits:
 
