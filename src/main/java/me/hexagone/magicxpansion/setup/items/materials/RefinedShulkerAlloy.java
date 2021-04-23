@@ -1,4 +1,4 @@
-package me.hexagone.magicxpansion.setup.magicxpansionitems.items;
+package me.hexagone.magicxpansion.setup.items.materials;
 
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactive;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
@@ -8,14 +8,15 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class EnergyCore extends UnplaceableBlock implements Radioactive {
+public class RefinedShulkerAlloy extends UnplaceableBlock implements Radioactive {
 
-    public EnergyCore(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public RefinedShulkerAlloy(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 
     @Override
     public Radioactivity getRadioactivity() {
-        return Radioactivity.VERY_HIGH;
+        return Radioactivity.VERY_DEADLY;
     }
+
 }

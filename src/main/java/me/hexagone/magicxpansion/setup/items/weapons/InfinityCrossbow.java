@@ -1,4 +1,4 @@
-package me.hexagone.magicxpansion.setup.magicxpansionitems.weapons;
+package me.hexagone.magicxpansion.setup.items.weapons;
 
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;

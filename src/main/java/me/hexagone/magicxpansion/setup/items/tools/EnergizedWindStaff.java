@@ -1,4 +1,4 @@
-package me.hexagone.magicxpansion.setup.magicxpansionitems.tools;
+package me.hexagone.magicxpansion.setup.items.tools;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
 import io.github.thebusybiscuit.slimefun4.api.items.settings.IntRangeSetting;

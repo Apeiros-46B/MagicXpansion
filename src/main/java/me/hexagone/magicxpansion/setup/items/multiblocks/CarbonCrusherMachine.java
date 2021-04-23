@@ -1,4 +1,4 @@
-package me.hexagone.magicxpansion.setup.magicxpansionitems.multiblocks;
+package me.hexagone.magicxpansion.setup.items.multiblocks;
 
 import java.util.List;
 import java.util.stream.Collectors;
