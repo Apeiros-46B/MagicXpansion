@@ -46,7 +46,7 @@ public final class MagicXpansionItems {
     }
 
     public static final SlimefunItemStack NETHER_STAR_BLOCK = new SlimefunItemStack("NETHER_STAR_BLOCK", Material.IRON_BLOCK,
-            "&dNether Star Block", "", "&cWith fury fueled by the power of lost souls,", "&cit emanates with the power of The Wither.", "",
+            "&dNether Star Block", "", "&cWith fury fueled by the power of the ancient souls,", "&cit glows with the power of The Wither.", "",
             LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
     static {
@@ -67,6 +67,30 @@ public final class MagicXpansionItems {
     static {
         RAPID_CROSSBOW.addUnsafeEnchantment(Enchantment.QUICK_CHARGE, 4);
         RAPID_CROSSBOW.addUnsafeEnchantment(Enchantment.PIERCING, 5);
+    }
+
+    public static final SlimefunItemStack SYNTHETIC_NAUTILUS_SHELL = new SlimefunItemStack("SYNTHETIC_NAUTILUS_SHELL", Material.NAUTILUS_SHELL,
+            "&bSynthetic Nautilus Shell", "", "&fCan be used in workbenches", "&fand Slimefun machines as", "&fa normal Nautilus Shell");
+
+    public static final SlimefunItemStack PRISTINIUM_ORB = new SlimefunItemStack("PRISTINIUM_ORB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRiYTY0MmVmZmZhMTNlYzM3MzBlYWZjNTkxNGFiNjgxMTVjMWY5OTg4MDNmNzQ0NTJlMmUwY2QyNmFmMGI4In19fQ==",
+            "&bPristinium Orb", "", "&7Crystal clear.", "&7There are no impurities.");
+
+    public static final SlimefunItemStack BLESSED_AQUATIC_NETHERITE_INGOT = new SlimefunItemStack("BLESSED_AQUATIC_NETHERITE_INGOT", Material.NETHERITE_INGOT,
+            "&b&lBlessed Aquatic Netherite Ingot", "", "&a&oBlessed by Poseidon himself.");
+
+    static {
+        BLESSED_AQUATIC_NETHERITE_INGOT.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        BLESSED_AQUATIC_NETHERITE_INGOT.addFlags(ItemFlag.HIDE_ENCHANTS);
+    }
+
+    public static final SlimefunItemStack POSEIDONS_TRIDENT = new SlimefunItemStack("POSEIDONS_TRIDENT", Material.TRIDENT,
+            "&bPoseidon's Trident", "&7Fidelity I", "&7Armor Piercing II", "", "&bThis trident can channel aquatic and electric energy", "&bto vanquish anything hit by it.", "", "&a&oInstantly returns to hand.");
+
+    static {
+        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 8);
+        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.DURABILITY, 8);
+        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.CHANNELING, 5);
+        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.LOYALTY, 7);
     }
 
     public static final SlimefunItemStack ENERGY_CORE = new SlimefunItemStack("ENERGY_CORE",
