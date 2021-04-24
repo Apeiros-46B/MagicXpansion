@@ -2,13 +2,13 @@
 name: MagicXpansion
 
 ## CHANGE this to your username.
-author: Hexagone
+author: Apeiros
 
 ## CHANGE this to a meaningful but short description of your plugin.
 description: A Slimefun4 addon that adds more magical items and more talismans.
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
-main: me.hexagone.magicxpansion.MagicXpansion
+main: me.apeiros.magicxpansion.MagicXpansion
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
 website: https://github.com/HexaGone68/MagicXpansion
