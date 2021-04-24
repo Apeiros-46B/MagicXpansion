@@ -57,19 +57,10 @@
                 <configuration>
                     <relocations>
                         <relocation>
-                            <pattern> io.github.mooy1.infinitylib </pattern>
-                            <shadedPattern> me.hexagone.magicxpansion.infinitylib </shadedPattern>
+                            <pattern>io.github.mooy1.infinitylib</pattern>
+                            <shadedPattern>me.hexagone.magicxpansion.infinitylib</shadedPattern>
                         </relocation>
                     </relocations>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*</exclude>
-                                <exclude>module-info.class</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
                 </configuration>
                 <executions>
                     <execution>
@@ -128,12 +119,6 @@
             <groupId>com.github.Mooy1</groupId>
             <artifactId>InfinityLib</artifactId>
             <version>36100795c7</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
