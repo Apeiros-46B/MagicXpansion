@@ -22,8 +22,10 @@ This addon adds more magical gadgets and talismans.
 - Arcanium Ingot
 - Reinforced Shulker Shell 
 - Reinforced Shulker Box
+- Synthetic Nautilus Shell
 - Shulkerium Alloy 
 - Enriched Shulkerium Alloy 
+- Blessed Aquatic Netherite
 - Core of Energy
 - Nether Star Block
 
@@ -31,7 +33,7 @@ This addon adds more magical gadgets and talismans.
 - Crossbow of Infinity **(WIP)**
 - Nether Crossbow **(WIP)**
 - Crossbow of Rapidity 
-- Poseidon's Fury **(WIP)**
+- Poseidon's Trident
 - Energized Wind Staff
 - Tome of Knowledge Synchronization **(WIP)**
 - Cactus Thorn Remover **(WIP)**
