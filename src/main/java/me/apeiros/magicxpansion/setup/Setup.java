@@ -116,14 +116,14 @@ public class Setup {
                 });
         RapidCrossbow.register((SlimefunAddon) plugin);
 
-        // Register Synthetic Nautilus Shell
-        VanillaItem SyntheticNautilusShell = new VanillaItem(category, SYNTHETIC_NAUTILUS_SHELL, "SYNTHETIC_NAUTILUS_SHELL", RecipeType.MAGIC_WORKBENCH,
+        // Register Nautilus Shell
+        VanillaItem NautilusShell = new VanillaItem(category, new ItemStack(Material.NAUTILUS_SHELL), "NAUTILUS_SHELL", RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[] {
                         SlimefunItems.STEEL_PLATE, new ItemStack(Material.SANDSTONE_SLAB), new ItemStack(Material.IRON_NUGGET),
                         new ItemStack(Material.SANDSTONE_SLAB), SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.SANDSTONE_SLAB),
                         SlimefunItems.STEEL_PLATE, new ItemStack(Material.SANDSTONE_SLAB), new ItemStack(Material.SANDSTONE_SLAB)
                 });
-        SyntheticNautilusShell.register((SlimefunAddon) plugin);
+        NautilusShell.register((SlimefunAddon) plugin);
 
         // Register Trident
         VanillaItem Trident = new VanillaItem(category, new ItemStack(Material.TRIDENT), "TRIDENT", RecipeType.ANCIENT_ALTAR,

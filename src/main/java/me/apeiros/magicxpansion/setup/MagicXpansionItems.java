@@ -69,9 +69,6 @@ public final class MagicXpansionItems {
         RAPID_CROSSBOW.addUnsafeEnchantment(Enchantment.PIERCING, 5);
     }
 
-    public static final SlimefunItemStack SYNTHETIC_NAUTILUS_SHELL = new SlimefunItemStack("SYNTHETIC_NAUTILUS_SHELL", Material.NAUTILUS_SHELL,
-            "&bSynthetic Nautilus Shell", "", "&fCan be used in workbenches", "&fand Slimefun machines as", "&fa normal Nautilus Shell");
-
     public static final SlimefunItemStack PRISTINIUM_ORB = new SlimefunItemStack("PRISTINIUM_ORB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRiYTY0MmVmZmZhMTNlYzM3MzBlYWZjNTkxNGFiNjgxMTVjMWY5OTg4MDNmNzQ0NTJlMmUwY2QyNmFmMGI4In19fQ==",
             "&bPristinium Orb", "", "&7Crystal clear.", "&7There are no impurities.");
 

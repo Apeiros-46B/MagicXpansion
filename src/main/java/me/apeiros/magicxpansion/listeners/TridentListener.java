@@ -56,7 +56,7 @@ public class TridentListener implements Listener {
 
             if (shooter instanceof Player) {
                 trident.teleport(shooter.getLocation());
-                world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 25, 0.4, 0.4, 0.4);
+                world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 40, 0.4, 0.4, 0.4);
             }
         }
     }
