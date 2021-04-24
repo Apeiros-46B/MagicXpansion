@@ -46,7 +46,7 @@ public final class MagicXpansionItems {
     }
 
     public static final SlimefunItemStack NETHER_STAR_BLOCK = new SlimefunItemStack("NETHER_STAR_BLOCK", Material.IRON_BLOCK,
-            "&dNether Star Block", "", "&cWith fury fueled by the power of the ancient souls,", "&cit glows with the power of The Wither.", "",
+            "&dNether Star Block", "", "&cWith fury fueled by the power of the ancient souls,", "&cit glows with the radiance of The Wither.", "",
             LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
     static {
@@ -84,13 +84,14 @@ public final class MagicXpansionItems {
     }
 
     public static final SlimefunItemStack POSEIDONS_TRIDENT = new SlimefunItemStack("POSEIDONS_TRIDENT", Material.TRIDENT,
-            "&bPoseidon's Trident", "&7Fidelity I", "&7Armor Piercing II", "", "&bThis trident can channel aquatic and electric energy", "&bto vanquish anything hit by it.", "", "&a&oInstantly returns to hand.");
+            "&bPoseidon's Trident", "&7Fidelity I", "", "&bThis trident can channel aquatic and electric energy", "&bto vanquish anything hit by it.", "", "&a&oInstantly returns to the wielder.");
 
     static {
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 8);
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.DURABILITY, 8);
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.CHANNELING, 5);
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.LOYALTY, 7);
+        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 3);
     }
 
     public static final SlimefunItemStack ENERGY_CORE = new SlimefunItemStack("ENERGY_CORE",

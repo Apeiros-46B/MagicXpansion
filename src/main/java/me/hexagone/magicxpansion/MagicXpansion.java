@@ -1,5 +1,6 @@
 package me.hexagone.magicxpansion;
 
+import me.hexagone.magicxpansion.listeners.TridentListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
@@ -12,6 +13,8 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         // Read something from your config.yml
         Config cfg = new Config(this);
+
+        getServer().getPluginManager().registerEvents(new TridentListener(), this);
 
         if (cfg.getBoolean("options.auto-update")) {
             // You could start an Auto-Updater for example
