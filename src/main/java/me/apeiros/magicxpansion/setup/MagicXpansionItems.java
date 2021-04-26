@@ -35,15 +35,10 @@ public final class MagicXpansionItems {
         SHULKER_ALLOY_INGOT.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
-    public static final SlimefunItemStack REFINED_SHULKER_ALLOY_INGOT = new SlimefunItemStack("REFINED_SHULKER_ALLOY_INGOT",
+    public static final SlimefunItemStack REFINED_SHULKER_ALLOY = new SlimefunItemStack("REFINED_SHULKER_ALLOY",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQwZGUxZmIxNDdkM2U1YjU3YzVkMjcxMTRkMzRjNjZkMDM4MDQzOWEzZjE4ZTA4OGJjZjQ3YzViMjM3YTcwZCJ9fX0=",
             "&d&lEnriched Shulkerium Alloy", "", "&aForged by the Ancient Spirits of the &bOverworld&a, &cUnderworld&a, and &dEnd &adimensions,",
             "&athis alloy is &l5 times &r&astronger than netherite.", "", LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
-
-    static {
-        REFINED_SHULKER_ALLOY_INGOT.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
-        REFINED_SHULKER_ALLOY_INGOT.addFlags(ItemFlag.HIDE_ENCHANTS);
-    }
 
     public static final SlimefunItemStack NETHER_STAR_BLOCK = new SlimefunItemStack("NETHER_STAR_BLOCK", Material.IRON_BLOCK,
             "&dNether Star Block", "", "&cWith fury fueled by the power of the ancient souls,", "&cit glows with the radiance of The Wither.", "",
@@ -68,6 +63,10 @@ public final class MagicXpansionItems {
         RAPID_CROSSBOW.addUnsafeEnchantment(Enchantment.QUICK_CHARGE, 4);
         RAPID_CROSSBOW.addUnsafeEnchantment(Enchantment.PIERCING, 5);
     }
+
+    public static final SlimefunItemStack NAUTILUS_FOSSIL = new SlimefunItemStack("NAUTILUS_FOSSIL",
+            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODEyNmNhYzE2ZmQ4ZTQ3NTE2ZTg0NTIwY2QzOTgxYzQ1ZDcwOGY1NWQzNDU4NDk0ZDhmMDgxYzUwNWQ2ZDMwNCJ9fX0=",
+            "&9Nautilus Fossil", "", "&7GEO-Mined from Cold, Normal, and Lukewarm Oceans");
 
     public static final SlimefunItemStack PRISTINIUM_ORB = new SlimefunItemStack("PRISTINIUM_ORB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRiYTY0MmVmZmZhMTNlYzM3MzBlYWZjNTkxNGFiNjgxMTVjMWY5OTg4MDNmNzQ0NTJlMmUwY2QyNmFmMGI4In19fQ==",
             "&bPristinium Orb", "", "&7Crystal clear.", "&7There are no impurities.");

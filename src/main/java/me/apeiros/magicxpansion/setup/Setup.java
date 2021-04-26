@@ -6,6 +6,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.VanillaItem;
 import me.apeiros.magicxpansion.listeners.CrossbowListener;
 import me.apeiros.magicxpansion.listeners.TridentListener;
+import me.apeiros.magicxpansion.setup.items.georesources.NautilusFossilResource;
 import me.gallowsdove.foxymachines.Items;
 import me.apeiros.magicxpansion.setup.items.georesources.ArcaniumOreResource;
 import me.apeiros.magicxpansion.setup.items.materials.*;
@@ -43,6 +44,7 @@ public class Setup {
                         SlimefunItems.ENDER_LUMP_3, SlimefunItems.ENDER_LUMP_3, null,
                         null, null, null});
         EnderLump4.register((SlimefunAddon) plugin);
+
         SlimefunItem EnderLump5 = new Lump(category, ENDER_LUMP_5, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[] {
                         ENDER_LUMP_4, ENDER_LUMP_4, null,
@@ -64,8 +66,9 @@ public class Setup {
         CarbonCrusher.register((SlimefunAddon) plugin);
 
         // Register Arcanium Ore and Arcanium Ingot
-        SlimefunItem ArcaniumOre = new ArcaniumOreChunk(category, ARCANIUM_ORE, RecipeType.GEO_MINER, new ItemStack[9]);
+        SlimefunItem ArcaniumOre = new UnplaceableHeadResource(category, ARCANIUM_ORE, RecipeType.GEO_MINER, new ItemStack[9]);
         ArcaniumOre.register((SlimefunAddon) plugin);
+
         SlimefunItem ArcaniumIngot = new Resource(category, ARCANIUM_INGOT, RecipeType.SMELTERY,
                 new ItemStack[] {
                         ARCANIUM_ORE, null, null,
@@ -80,6 +83,7 @@ public class Setup {
                         new ItemStack(Material.SHULKER_SHELL), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.SHULKER_SHELL),
                         new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.SHULKER_SHELL), new ItemStack(Material.SHULKER_SHELL)});
         ReinforcedShulkerShell.register((SlimefunAddon) plugin);
+
         SlimefunItem ReinforcedShulkerBox = new ContainerItem(category, REINFORCED_SHULKER_BOX, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[] {
                         new ItemStack(Material.OBSIDIAN), REINFORCED_SHULKER_SHELL, new ItemStack(Material.OBSIDIAN),
@@ -92,7 +96,8 @@ public class Setup {
                 new ItemStack[] {
                         REINFORCED_SHULKER_SHELL, SlimefunItems.BLISTERING_INGOT_3, null, null, null, null, null, null, null});
         ShulkerAlloyIngot.register((SlimefunAddon) plugin);
-        SlimefunItem RefinedShulkerAlloyChunk = new RefinedShulkerAlloy(category, REFINED_SHULKER_ALLOY_INGOT, RecipeType.SMELTERY,
+
+        SlimefunItem RefinedShulkerAlloyChunk = new RefinedShulkerAlloy(category, REFINED_SHULKER_ALLOY, RecipeType.SMELTERY,
                 new ItemStack[] {
                         SHULKER_ALLOY_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.HARDENED_METAL_INGOT,
                         SlimefunItems.CARBONADO, Items.DEMONIC_INGOT, new ItemStack(Material.NETHERITE_BLOCK),
@@ -108,7 +113,7 @@ public class Setup {
         InfinityCrossbow.register((SlimefunAddon) plugin);
 
         // Register Crossbow of Rapidity
-        SlimefunItem RapidCrossbow = new RapidCrossbow(category, INFINITY_CROSSBOW, RecipeType.ANCIENT_ALTAR,
+        SlimefunItem RapidCrossbow = new RapidCrossbow(category, RAPID_CROSSBOW, RecipeType.ANCIENT_ALTAR,
                 new ItemStack[] {
                         ARCANIUM_INGOT, SlimefunItems.SLIME_LEGGINGS_STEEL, ARCANIUM_INGOT,
                         SlimefunItems.MAGIC_SUGAR, new ItemStack(Material.CROSSBOW), SlimefunItems.MAGIC_SUGAR,
@@ -116,13 +121,17 @@ public class Setup {
                 });
         RapidCrossbow.register((SlimefunAddon) plugin);
 
+        // Register Nautilus Fossil
+        SlimefunItem NautilusFossil = new UnplaceableHeadResource(category, NAUTILUS_FOSSIL, RecipeType.GEO_MINER, new ItemStack[9]);
+        NautilusFossil.register((SlimefunAddon) plugin);
+
         // Register Nautilus Shell
-        VanillaItem NautilusShell = new VanillaItem(category, new ItemStack(Material.NAUTILUS_SHELL), "NAUTILUS_SHELL", RecipeType.ENHANCED_CRAFTING_TABLE,
+        VanillaItem NautilusShell = new VanillaItem(category, new ItemStack(Material.NAUTILUS_SHELL), "NAUTILUS_SHELL", RecipeType.ORE_WASHER,
                 new ItemStack[] {
-                        SlimefunItems.STEEL_PLATE, new ItemStack(Material.SANDSTONE_SLAB), new ItemStack(Material.IRON_NUGGET),
-                        new ItemStack(Material.SANDSTONE_SLAB), SlimefunItems.REINFORCED_ALLOY_INGOT, new ItemStack(Material.SANDSTONE_SLAB),
-                        SlimefunItems.STEEL_PLATE, new ItemStack(Material.SANDSTONE_SLAB), new ItemStack(Material.SANDSTONE_SLAB)
-                });
+                        NAUTILUS_FOSSIL, null, null,
+                        null, null, null,
+                        null, null, null
+        });
         NautilusShell.register((SlimefunAddon) plugin);
 
         // Register Trident
@@ -167,6 +176,7 @@ public class Setup {
                         Items.MAGIC_LUMP_5, SlimefunItems.CARBONADO, Items.MAGIC_LUMP_5,
                         SHULKER_ALLOY_INGOT, SlimefunItems.LIGHTNING_RUNE, SHULKER_ALLOY_INGOT});
         EnergyCore.register((SlimefunAddon) plugin);
+
         SlimefunItem StaffEnergizedWind = new EnergizedWindStaff(category, STAFF_ENERGIZED_WIND, RecipeType.ANCIENT_ALTAR,
                 new ItemStack[] {
                         SlimefunItems.ELYTRA_SCALE, Items.ELECTRIC_WIND_STAFF, SlimefunItems.AIR_RUNE,
@@ -177,6 +187,9 @@ public class Setup {
         // Register GEO-Resources
         ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(plugin, ARCANIUM_ORE);
         arcaniumOreResource.register();
+
+        NautilusFossilResource nautilusFossilResource = new NautilusFossilResource(plugin, NAUTILUS_FOSSIL);
+        nautilusFossilResource.register();
 
         // Register Listeners
         getServer().getPluginManager().registerEvents(new TridentListener(), plugin);

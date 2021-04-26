@@ -6,9 +6,9 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class ArcaniumOreChunk extends UnplaceableBlock {
+public class UnplaceableHeadResource extends UnplaceableBlock {
 
-    public ArcaniumOreChunk(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public UnplaceableHeadResource(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 
