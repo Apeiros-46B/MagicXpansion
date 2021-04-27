@@ -64,6 +64,13 @@ public final class MagicXpansionItems {
         RAPID_CROSSBOW.addUnsafeEnchantment(Enchantment.PIERCING, 5);
     }
 
+    public static final SlimefunItemStack NETHER_CROSSBOW = new SlimefunItemStack("NETHER_CROSSBOW", Material.CROSSBOW,
+            "&cCrossbow of the Nether", "", "&cSets arrows ablaze and has a chance",  "&cto shoot a blaze fireball.");
+
+    static {
+        NETHER_CROSSBOW.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 5);
+    }
+
     public static final SlimefunItemStack NAUTILUS_FOSSIL = new SlimefunItemStack("NAUTILUS_FOSSIL",
             "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODEyNmNhYzE2ZmQ4ZTQ3NTE2ZTg0NTIwY2QzOTgxYzQ1ZDcwOGY1NWQzNDU4NDk0ZDhmMDgxYzUwNWQ2ZDMwNCJ9fX0=",
             "&9Nautilus Fossil", "", "&7GEO-Mined from Cold, Normal, and Lukewarm Oceans");
