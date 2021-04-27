@@ -30,7 +30,7 @@ This addon adds more magical gadgets and talismans.
 - Nether Star Block
 
 ### List of tools, weapons, armor, and utilities:
-- Crossbow of Infinity **(WIP)**
+- Crossbow of Infinity
 - Nether Crossbow **(WIP)**
 - Crossbow of Rapidity 
 - Poseidon's Trident
