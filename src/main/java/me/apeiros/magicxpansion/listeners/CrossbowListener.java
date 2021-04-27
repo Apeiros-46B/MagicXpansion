@@ -40,6 +40,8 @@ public class CrossbowListener implements Listener {
             ThreadLocalRandom r = ThreadLocalRandom.current();
             int rNum = r.nextInt(3);
 
+            projectile.setFireTicks(32767);
+
             if (rNum == 0) {
                 World world = projectile.getWorld();
 
@@ -47,10 +49,6 @@ public class CrossbowListener implements Listener {
                 fireball.setVelocity(projectile.getVelocity());
                 fireball.setGravity(true);
                 fireball.setFireTicks(32767);
-
-                projectile.remove();
-            } else {
-                projectile.setFireTicks(32767);
             }
         }
     }

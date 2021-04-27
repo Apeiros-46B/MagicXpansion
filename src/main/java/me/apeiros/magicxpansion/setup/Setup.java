@@ -7,6 +7,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.VanillaItem;
 import me.apeiros.magicxpansion.listeners.CrossbowListener;
 import me.apeiros.magicxpansion.listeners.TridentListener;
 import me.apeiros.magicxpansion.setup.items.georesources.NautilusFossilResource;
+import me.apeiros.magicxpansion.setup.items.weapons.NetherCrossbow;
 import me.gallowsdove.foxymachines.Items;
 import me.apeiros.magicxpansion.setup.items.georesources.ArcaniumOreResource;
 import me.apeiros.magicxpansion.setup.items.materials.*;
@@ -120,6 +121,15 @@ public class Setup {
                         SlimefunItems.ENCHANTMENT_RUNE, SlimefunItems.MAGICAL_GLASS, SlimefunItems.ENDER_RUNE
                 });
         rapidCrossbow.register((SlimefunAddon) plugin);
+
+        // Register Crossbow of the Nether
+        SlimefunItem netherCrossbow = new NetherCrossbow(category, RAPID_CROSSBOW, RecipeType.ANCIENT_ALTAR,
+                new ItemStack[] {
+                        new ItemStack(Material.BLAZE_ROD), SlimefunItems.NETHER_ICE, new ItemStack(Material.BLAZE_ROD),
+                        SlimefunItems.FIRE_RUNE, new ItemStack(Material.CROSSBOW), SlimefunItems.FIRE_RUNE,
+                        SlimefunItems.HEATING_COIL, new ItemStack(Material.NETHERITE_INGOT), SlimefunItems.HEATING_COIL
+                });
+        netherCrossbow.register((SlimefunAddon) plugin);
 
         // Register Nautilus Fossil
         SlimefunItem nautilusFossil = new UnplaceableHeadResource(category, NAUTILUS_FOSSIL, RecipeType.GEO_MINER, new ItemStack[9]);
