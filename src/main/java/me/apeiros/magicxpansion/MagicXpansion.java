@@ -1,6 +1,5 @@
 package me.apeiros.magicxpansion;
 
-import me.apeiros.magicxpansion.listeners.TridentListener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,7 +19,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
             // You could start an Auto-Updater for example
         }
 
-        Setup.RegisterItems(this);
+        Setup.setup(this);
     }
 
     @Override

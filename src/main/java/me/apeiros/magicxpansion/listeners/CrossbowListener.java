@@ -5,7 +5,6 @@ import me.apeiros.magicxpansion.MagicXpansion;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -14,8 +13,6 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 public class CrossbowListener implements Listener {
 
@@ -32,23 +29,6 @@ public class CrossbowListener implements Listener {
                 if (MagicXpansion.doesInvHaveSpace(inv, new ItemStack(Material.ARROW), 1)) {
                     inv.addItem(new ItemStack(Material.ARROW));
                 }
-            }
-        } else if (e.getEntity() instanceof Player && e.getProjectile().getType() == EntityType.ARROW &&
-               SlimefunUtils.isItemSimilar(e.getBow(), MagicXpansionItems.NETHER_CROSSBOW, false, false)) {
-            Projectile projectile = (Projectile) e.getProjectile();
-
-            ThreadLocalRandom r = ThreadLocalRandom.current();
-            int rNum = r.nextInt(3);
-
-            projectile.setFireTicks(32767);
-
-            if (rNum == 0) {
-                World world = projectile.getWorld();
-
-                Entity fireball = world.spawnEntity(projectile.getLocation(), EntityType.SMALL_FIREBALL);
-                fireball.setVelocity(projectile.getVelocity());
-                fireball.setGravity(true);
-                fireball.setFireTicks(32767);
             }
         }
     }

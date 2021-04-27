@@ -32,7 +32,7 @@ import static org.bukkit.Bukkit.getServer;
 
 public class Setup {
 
-    public static void RegisterItems(JavaPlugin plugin) {
+    public static void setup(JavaPlugin plugin) {
         // Basic setup
         ItemStack categoryItem = new CustomItem(Material.END_PORTAL_FRAME, "&6MagicXpansion", "", "⇨ &aClick to open");
         NamespacedKey categoryId = new NamespacedKey(plugin, "magicxpansion_category");
@@ -123,7 +123,7 @@ public class Setup {
         rapidCrossbow.register((SlimefunAddon) plugin);
 
         // Register Crossbow of the Nether
-        SlimefunItem netherCrossbow = new NetherCrossbow(category, RAPID_CROSSBOW, RecipeType.ANCIENT_ALTAR,
+        SlimefunItem netherCrossbow = new NetherCrossbow(category, NETHER_CROSSBOW, RecipeType.ANCIENT_ALTAR,
                 new ItemStack[] {
                         new ItemStack(Material.BLAZE_ROD), SlimefunItems.NETHER_ICE, new ItemStack(Material.BLAZE_ROD),
                         SlimefunItems.FIRE_RUNE, new ItemStack(Material.CROSSBOW), SlimefunItems.FIRE_RUNE,
