@@ -13,7 +13,7 @@ public class NautilusFossilResource implements GEOResource {
     private final ItemStack item;
 
     public NautilusFossilResource(Plugin plugin, ItemStack item) {
-        this.key = new NamespacedKey(plugin, "arcanium_ore");
+        this.key = new NamespacedKey(plugin, "nautilus_fossil");
         this.item = item;
     }
 

@@ -202,7 +202,6 @@ public class Setup {
         nautilusFossilResource.register();
 
         // Register Listeners
-        getServer().getPluginManager().registerEvents(new TridentListener(), plugin);
-        getServer().getPluginManager().registerEvents(new CrossbowListener(), plugin);
+
     }
 }

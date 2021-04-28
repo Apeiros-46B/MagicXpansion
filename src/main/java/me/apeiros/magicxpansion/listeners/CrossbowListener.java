@@ -5,7 +5,9 @@ import me.apeiros.magicxpansion.MagicXpansion;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.Player;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -23,12 +25,12 @@ public class CrossbowListener implements Listener {
             Player p = (Player) e.getEntity();
             Inventory inv = p.getInventory();
 
-            if (p.getGameMode() == GameMode.CREATIVE) {
-                // Do nothing because the player is in creative; they don't use arrows
-            } else {
+            if (p.getGameMode() != GameMode.CREATIVE) {
+
                 if (MagicXpansion.doesInvHaveSpace(inv, new ItemStack(Material.ARROW), 1)) {
                     inv.addItem(new ItemStack(Material.ARROW));
                 }
+
             }
         }
     }
@@ -47,5 +49,4 @@ public class CrossbowListener implements Listener {
             }
         }
     }
-
 }
