@@ -69,6 +69,8 @@ public final class MagicXpansionItems {
 
     static {
         NETHER_CROSSBOW.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 5);
+        NETHER_CROSSBOW.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 2);
+        NETHER_CROSSBOW.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
     }
 
     public static final SlimefunItemStack NAUTILUS_FOSSIL = new SlimefunItemStack("NAUTILUS_FOSSIL",

@@ -28,7 +28,7 @@ public class TridentListener implements Listener {
                     (SlimefunUtils.isItemSimilar(player.getInventory().getItemInMainHand(), MagicXpansionItems.POSEIDONS_TRIDENT, false, false))
                     || (SlimefunUtils.isItemSimilar(player.getInventory().getItemInOffHand(), MagicXpansionItems.POSEIDONS_TRIDENT, false, false))) {
                 Projectile trident = e.getEntity();
-                trident.setVelocity(trident.getVelocity().multiply(2.5));
+                trident.setVelocity(trident.getVelocity().multiply(1.75));
             }
         }
     }
@@ -56,7 +56,13 @@ public class TridentListener implements Listener {
 
             if (shooter instanceof Player) {
                 trident.teleport(shooter.getLocation());
-                world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 40, 0.4, 0.4, 0.4);
+                world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 75, 0.4, 0.4, 0.4);
+
+                if (e.getHitEntity() == null) {
+                    trident.teleport(shooter.getLocation());
+                    world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 40, 1, 1, 1);
+                }
+
             }
         }
     }
