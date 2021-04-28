@@ -3,10 +3,7 @@ package me.apeiros.magicxpansion.listeners;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.apeiros.magicxpansion.MagicXpansion;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -37,20 +34,21 @@ public class CrossbowListener implements Listener {
             } else if (SlimefunUtils.isItemSimilar(e.getBow(), MagicXpansionItems.NETHER_CROSSBOW, false, false)) {
                 ThreadLocalRandom r = ThreadLocalRandom.current();
                 Projectile projectile = (Projectile) e.getProjectile();
+                World world = p.getWorld();
+                Location loc = p.getLocation();
                 int rNum = r.nextInt(3);
 
+                world.playSound(loc, Sound.ITEM_FIRECHARGE_USE, 1, 1);
+                projectile.setFireTicks(32767);
+
                 if (rNum == 0) {
-                    World world = projectile.getWorld();
-                    Location loc = projectile.getLocation();
                     Vector v = projectile.getVelocity();
 
                     Entity fireballProjectile = world.spawnEntity(loc, EntityType.SMALL_FIREBALL);
-                    fireballProjectile.setFireTicks(32767);
-                    fireballProjectile.setGravity(true);
+                    fireballProjectile.setGravity(false);
                     fireballProjectile.teleport(loc);
                     fireballProjectile.setVelocity(v);
-                } else {
-                    projectile.setFireTicks(32767);
+                    world.playEffect(loc, Effect.MOBSPAWNER_FLAMES, 1);
                 }
             }
         }
