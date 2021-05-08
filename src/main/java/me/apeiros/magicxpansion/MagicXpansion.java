@@ -10,7 +10,12 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.apeiros.magicxpansion.setup.Setup;
 
+import javax.annotation.Nonnull;
+import java.io.File;
+
 public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
+
+    private static MagicXpansion instance;
 
     @Override
     public void onEnable() {
@@ -21,12 +26,15 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
             // You could start an Auto-Updater for example
         }
 
-        // Register Listeners
-        getServer().getPluginManager().registerEvents(new TridentListener(), this);
-        getServer().getPluginManager().registerEvents(new CrossbowListener(), this);
+        // Instance
+        instance = this;
 
         // Setup items
         Setup.setup(this);
+
+        // Register Listeners
+        new TridentListener(this);
+        new CrossbowListener(this);
     }
 
     @Override
@@ -37,9 +45,10 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
     @Override
     public String getBugTrackerURL() {
         // You can return a link to your Bug Tracker instead of null here
-        return null;
+        return "https://github.com/Apeiros-46B/MagicXpansion/issues";
     }
 
+    @Nonnull
     @Override
     public JavaPlugin getJavaPlugin() {
         // Returns a reference to this JavaPlugin
@@ -56,4 +65,8 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         }
     }
 
+    @Nonnull
+    public static MagicXpansion getInstance() {
+        return instance;
+    }
 }
