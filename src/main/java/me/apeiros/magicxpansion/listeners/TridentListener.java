@@ -12,10 +12,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TridentListener implements Listener {
+
+    public TridentListener (JavaPlugin plugin) {
+        plugin.getServer().getPluginManager().registerEvents(this, plugin);
+    }
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onTridentShoot(ProjectileLaunchEvent e) {

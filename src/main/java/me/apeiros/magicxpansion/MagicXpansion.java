@@ -1,6 +1,7 @@
 package me.apeiros.magicxpansion;
 
 import me.apeiros.magicxpansion.listeners.CrossbowListener;
+import me.apeiros.magicxpansion.listeners.ScytheListener;
 import me.apeiros.magicxpansion.listeners.TridentListener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -11,7 +12,6 @@ import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.apeiros.magicxpansion.setup.Setup;
 
 import javax.annotation.Nonnull;
-import java.io.File;
 
 public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
 
@@ -35,6 +35,7 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         // Register Listeners
         new TridentListener(this);
         new CrossbowListener(this);
+        new ScytheListener(this);
     }
 
     @Override
@@ -44,14 +45,12 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        // You can return a link to your Bug Tracker instead of null here
         return "https://github.com/Apeiros-46B/MagicXpansion/issues";
     }
 
     @Nonnull
     @Override
     public JavaPlugin getJavaPlugin() {
-        // Returns a reference to this JavaPlugin
         return this;
     }
 

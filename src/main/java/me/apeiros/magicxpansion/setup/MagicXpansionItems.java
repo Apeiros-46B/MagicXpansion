@@ -1,20 +1,28 @@
 package me.apeiros.magicxpansion.setup;
 
+import me.apeiros.magicxpansion.utils.HeadTextures;
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.UUID;
 
 public final class MagicXpansionItems {
 
     public static final SlimefunItemStack ENDER_LUMP_4 = new SlimefunItemStack("ENDER_LUMP_4", Material.GOLD_NUGGET, "&5Ender Lump &7- &eIV", "", "&c&oTier: IV");
     public static final SlimefunItemStack ENDER_LUMP_5 = new SlimefunItemStack("ENDER_LUMP_5", Material.GOLD_NUGGET, "&5Ender Lump &7- &eV", "", "&c&oTier: V");
 
-    public static final SlimefunItemStack ARCANIUM_ORE = new SlimefunItemStack("ARCANIUM_ORE",
-            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E2ZGNmMjc1Y2Y1OGM2NGNhN2I0ZDFmYzRlYTAwOWEyYjU2OTk1ZjUxYjU0OTg3NGJhNzg5ODZjZGVhYjdkMyJ9fX0=",
+    public static final SlimefunItemStack CARBON_CRUSHER_MACHINE = new SlimefunItemStack("CARBON_CRUSHER", Material.PISTON, "&bCarbon Crusher", "", "&bCrushes Diamonds into Carbon");
+
+    public static final SlimefunItemStack ARCANIUM_ORE = new SlimefunItemStack("ARCANIUM_ORE", HeadTextures.ARCANIUM_ORE_TEXTURE,
             "&cArcanium Ore", "&7GEO-Mined in the End Dimension", "&7You can smelt this into an Ingot in a Smeltery");
     public static final SlimefunItemStack ARCANIUM_INGOT = new SlimefunItemStack("ARCANIUM_INGOT", Material.NETHER_BRICK,
             "&c&lArcanium Ingot", "&5A magical ingot that glows with power");
@@ -35,8 +43,7 @@ public final class MagicXpansionItems {
         SHULKER_ALLOY_INGOT.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
-    public static final SlimefunItemStack REFINED_SHULKER_ALLOY = new SlimefunItemStack("REFINED_SHULKER_ALLOY",
-            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQwZGUxZmIxNDdkM2U1YjU3YzVkMjcxMTRkMzRjNjZkMDM4MDQzOWEzZjE4ZTA4OGJjZjQ3YzViMjM3YTcwZCJ9fX0=",
+    public static final SlimefunItemStack REFINED_SHULKER_ALLOY = new SlimefunItemStack("REFINED_SHULKER_ALLOY", HeadTextures.REFINED_SHULKER_ALLOY_TEXTURE,
             "&d&lEnriched Shulkerium Alloy", "", "&aForged by the Ancient Spirits of the &bOverworld&a, &cUnderworld&a, and &dEnd &adimensions,",
             "&athis alloy is &l5 times &r&astronger than netherite.", "", LoreBuilder.radioactive(Radioactivity.VERY_DEADLY), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
@@ -73,8 +80,7 @@ public final class MagicXpansionItems {
         NETHER_CROSSBOW.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
     }
 
-    public static final SlimefunItemStack NAUTILUS_FOSSIL = new SlimefunItemStack("NAUTILUS_FOSSIL",
-            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODEyNmNhYzE2ZmQ4ZTQ3NTE2ZTg0NTIwY2QzOTgxYzQ1ZDcwOGY1NWQzNDU4NDk0ZDhmMDgxYzUwNWQ2ZDMwNCJ9fX0=",
+    public static final SlimefunItemStack NAUTILUS_FOSSIL = new SlimefunItemStack("NAUTILUS_FOSSIL", HeadTextures.NAUTILUS_FOSSIL_TEXTURE,
             "&9Nautilus Fossil", "", "&7GEO-Mined from Cold, Normal, and Lukewarm Oceans");
 
     public static final SlimefunItemStack PRISTINIUM_ORB = new SlimefunItemStack("PRISTINIUM_ORB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRiYTY0MmVmZmZhMTNlYzM3MzBlYWZjNTkxNGFiNjgxMTVjMWY5OTg4MDNmNzQ0NTJlMmUwY2QyNmFmMGI4In19fQ==",
@@ -89,20 +95,18 @@ public final class MagicXpansionItems {
     }
 
     public static final SlimefunItemStack POSEIDONS_TRIDENT = new SlimefunItemStack("POSEIDONS_TRIDENT", Material.TRIDENT,
-            "&bPoseidon's Trident", "&7Fidelity I", "", "&bThis trident can channel aquatic and electric energy", "&bto vanquish anything hit by it.", "", "&a&oInstantly returns to the wielder.");
+            "&bPoseidon's Trident", "", "&a&oNever leaves your hand.", "&a&oHas the power to summon lightning", "&a&oin the middle of a sunny day.");
 
     static {
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 8);
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.DURABILITY, 8);
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.CHANNELING, 5);
         POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.LOYALTY, 7);
-        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 3);
+        POSEIDONS_TRIDENT.addUnsafeEnchantment(Enchantment.ARROW_INFINITE, 1);
     }
 
-    public static final SlimefunItemStack ENERGY_CORE = new SlimefunItemStack("ENERGY_CORE",
-            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODNlZDRjZTIzOTMzZTY2ZTA0ZGYxNjA3MDY0NGY3NTk5ZWViNTUzMDdmN2VhZmU4ZDkyZjQwZmIzNTIwODYzYyJ9fX0=",
-            "&bCore of Energy", "", "&a&oIt radiates with a forgotten energy...", "",
-            LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
+    public static final SlimefunItemStack ENERGY_CORE = new SlimefunItemStack("ENERGY_CORE", HeadTextures.ENERGY_CORE_TEXTURE,
+            "&bCore of Energy", "", "&a&oIt radiates with a forgotten energy...", "", LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
     public static final SlimefunItemStack STAFF_ENERGIZED_WIND = new SlimefunItemStack("STAFF_ENERGIZED_WIND", Material.BLAZE_ROD,
             "&6&lEnergized Staff &7- &bWind", "", "&7Element: &b&oWind", "", "&eRight Click &7to launch yourself forward.", "&aDoesn't require an energy source");
 
@@ -110,4 +114,30 @@ public final class MagicXpansionItems {
         STAFF_ENERGIZED_WIND.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
         STAFF_ENERGIZED_WIND.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
+    public static final SlimefunItemStack REAPER_SCYTHE = new SlimefunItemStack("REAPER_SCYTHE", Material.IRON_HOE,
+            "&cThe Reaper's Scythe", "&7Extricate III", "", "&cThis scythe can extract &bSouls &cfrom killed", "&cmobs and drop them on the ground in", "&ca condensed, corporeal form.", "", "&5&oWithers may drop extra souls... I wonder why");
+
+    static {
+        ItemMeta meta = REAPER_SCYTHE.getItemMeta();
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE,
+                new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 5,
+                        AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+
+        REAPER_SCYTHE.setItemMeta(meta);
+
+        REAPER_SCYTHE.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 5);
+        REAPER_SCYTHE.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 2);
+        REAPER_SCYTHE.addUnsafeEnchantment(Enchantment.DURABILITY, 10);
+    }
+
+    public static final SlimefunItemStack SOUL = new SlimefunItemStack("SOUL", Material.BLUE_DYE,
+            "&bSoul");
+
+    static {
+        SOUL.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        SOUL.addFlags(ItemFlag.HIDE_ENCHANTS);
+    }
+
+    public static final SlimefunItemStack SOUL_CLUSTER = new SlimefunItemStack("SOUL_CLUSTER", HeadTextures.SOUL_CLUSTER_TEXTURE,
+            "&bCore of Energy", "", "&a&oIt radiates with a forgotten energy...", "", LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 }
