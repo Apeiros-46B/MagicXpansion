@@ -28,13 +28,16 @@ This addon adds more magical gadgets and talismans.
 - Blessed Aquatic Netherite
 - Core of Energy
 - Nether Star Block
+- Illusioner Totem
 
 ### List of tools, weapons, armor, and utilities:
 - Crossbow of Infinity
-- Nether Crossbow **(WIP)**
-- Crossbow of Rapidity 
+- Crossbow of Rapidity
+- Crossbow of the Nether 
 - Poseidon's Trident
 - Energized Wind Staff
+- Spellbooks **(WIP)**
+- Spellcasting Devices (totems, wands, sceptres) **(WIP)**
 - Tome of Knowledge Synchronization **(WIP)**
 - Cactus Thorn Remover **(WIP)**
 - Cake Grabber **(WIP)**
@@ -48,7 +51,7 @@ This addon adds more magical gadgets and talismans.
 ## Credits:
 
 ### Thanks to
-- DeepFriedDurp#5899 for coming up with ideas for items and talismans
+- DeepFriedDurp#5899 for helping me come up with ideas
 - [@GallowsDove](https://github.com/gallowsdove), @waleks#6762 and [@Mooy1](https://github.com/mooy1) for giving feedback on ideas
 - [Slimefun Discord](https://discord.gg/slimefun) for having a #programming-help channel
 - @waleks#6762, [@Mooy1](https://github.com/mooy1), and [@WalshyDev](https://github.com/walshydev) for answering me in #programming-help
