@@ -43,7 +43,7 @@ public abstract class SoulReactor extends Reactor {
     protected void registerDefaultFuelTypes() {
         this.registerFuel(new MachineFuel(25, new ItemStack(Material.SOUL_SAND), new ItemStack(Material.SAND)));
         this.registerFuel(new MachineFuel(50, new ItemStack(Material.SOUL_SOIL), new ItemStack(Material.DIRT)));
-        this.registerFuel(new MachineFuel(100, MagicXpansionItems.SOUL, null));
+        this.registerFuel(new MachineFuel(600, MagicXpansionItems.SOUL_CLUSTER, null));
     }
 
     @Override

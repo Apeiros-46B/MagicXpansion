@@ -15,7 +15,7 @@ public class SoulPress extends AContainer implements RecipeDisplayItem {
     }
 
     protected void registerDefaultRecipes() {
-        this.addRecipe(60, new SlimefunItemStack(MagicXpansionItems.SOUL, 9), );
+        this.addRecipe(60, new SlimefunItemStack(MagicXpansionItems.SOUL, 6), MagicXpansionItems.SOUL_CLUSTER);
     }
 
     private void addRecipe(int seconds, ItemStack input, ItemStack output) {
