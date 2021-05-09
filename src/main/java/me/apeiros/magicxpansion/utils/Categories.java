@@ -1,4 +1,4 @@
-package me.apeiros.magicxpansion.lists;
+package me.apeiros.magicxpansion.utils;
 
 import io.github.mooy1.infinitylib.slimefun.utils.MultiCategory;
 import io.github.mooy1.infinitylib.slimefun.utils.SubCategory;

@@ -12,10 +12,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TridentListener implements Listener {
+
+    public TridentListener(JavaPlugin plugin) {
+        plugin.getServer().getPluginManager().registerEvents(this, plugin);
+    }
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onTridentShoot(ProjectileLaunchEvent e) {
@@ -28,6 +33,7 @@ public class TridentListener implements Listener {
                     (SlimefunUtils.isItemSimilar(player.getInventory().getItemInMainHand(), MagicXpansionItems.POSEIDONS_TRIDENT, false, false))
                     || (SlimefunUtils.isItemSimilar(player.getInventory().getItemInOffHand(), MagicXpansionItems.POSEIDONS_TRIDENT, false, false))) {
                 Projectile trident = e.getEntity();
+
                 trident.setVelocity(trident.getVelocity().multiply(1.75));
             }
         }
@@ -35,36 +41,42 @@ public class TridentListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onTridentHit(ProjectileHitEvent e) {
-        if (e.getEntity().getType() == EntityType.TRIDENT && e.getHitEntity() instanceof LivingEntity) {
-            LivingEntity entity = (LivingEntity) e.getHitEntity();
-            Projectile trident = e.getEntity();
+        if (e.getEntity().getShooter() != null) {
             Entity shooter = (Entity) e.getEntity().getShooter();
+            Location shooterLoc = shooter.getLocation();
 
-            World world = entity.getWorld();
+            if (e.getEntity().getType() == EntityType.TRIDENT && e.getHitEntity() instanceof LivingEntity && shooter instanceof Player) {
+                LivingEntity entity = (LivingEntity) e.getHitEntity();
+                Projectile trident = e.getEntity();
+                World world = shooter.getWorld();
 
-            if (!world.isThundering()) {
-                Location location = entity.getLocation();
+                if (!world.isThundering()) {
+                    Location location = entity.getLocation();
 
-                ThreadLocalRandom r = ThreadLocalRandom.current();
-                int rNum = r.nextInt(4);
+                    ThreadLocalRandom r = ThreadLocalRandom.current();
+                    int rNum = r.nextInt(4);
 
-                if (rNum == 0) {
-                    world.strikeLightning(location);
-                    world.playSound(location, Sound.ITEM_TRIDENT_THUNDER, 1, 1);
+                    if (rNum == 0) {
+                        world.strikeLightning(location);
+                        world.playSound(location, Sound.ITEM_TRIDENT_THUNDER, 1, 1);
+                        world.playSound(shooterLoc, Sound.ITEM_TRIDENT_RETURN, 1, 1);
+                    }
                 }
+
+                trident.teleport(shooterLoc);
+                world.spawnParticle(Particle.NAUTILUS, shooterLoc, 75, 0.4, 0.4, 0.4);
             }
 
-            if (shooter instanceof Player) {
-                trident.teleport(shooter.getLocation());
-                world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 75, 0.4, 0.4, 0.4);
+            if (e.getEntity().getType() == EntityType.TRIDENT && e.getHitEntity() == null && shooter instanceof Player) {
+                Trident trident = (Trident) e.getEntity();
+                World world = shooter.getWorld();
 
-                if (e.getHitEntity() == null) {
-                    trident.teleport(shooter.getLocation());
-                    world.spawnParticle(Particle.NAUTILUS, shooter.getLocation(), 40, 1, 1, 1);
+                if (SlimefunUtils.isItemSimilar(trident.getItem(), MagicXpansionItems.POSEIDONS_TRIDENT, false, false)) {
+                    trident.teleport(shooterLoc);
+                    world.spawnParticle(Particle.NAUTILUS, shooterLoc, 30, 1, 1, 1);
+                    world.playSound(shooterLoc, Sound.ITEM_TRIDENT_RETURN, 1, 1);
                 }
-
             }
         }
     }
-
 }

@@ -6,9 +6,9 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class NetherCrossbow extends SlimefunItem {
+public class CustomCrossbow extends SlimefunItem {
 
-    public NetherCrossbow(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CustomCrossbow(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 

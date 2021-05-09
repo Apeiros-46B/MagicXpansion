@@ -6,9 +6,9 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class RapidCrossbow extends SlimefunItem {
+public class MeleeWeapon extends SlimefunItem {
 
-    public RapidCrossbow(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public MeleeWeapon(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 

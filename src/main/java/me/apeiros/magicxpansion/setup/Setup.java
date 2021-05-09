@@ -4,30 +4,27 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.VanillaItem;
-import me.apeiros.magicxpansion.lists.Categories;
-import me.apeiros.magicxpansion.setup.items.georesources.NautilusFossilResource;
-import me.apeiros.magicxpansion.setup.items.weapons.NetherCrossbow;
-import me.apeiros.magicxpansion.setup.items.georesources.ArcaniumOreResource;
+import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.HeatedPressureChamber;
+import me.apeiros.magicxpansion.setup.items.georesources.*;
 import me.apeiros.magicxpansion.setup.items.materials.*;
-import me.apeiros.magicxpansion.setup.items.multiblocks.CarbonCrusherMachine;
-import me.apeiros.magicxpansion.setup.items.tools.ContainerItem;
-import me.apeiros.magicxpansion.setup.items.tools.EnergizedWindStaff;
-import me.apeiros.magicxpansion.setup.items.weapons.InfinityCrossbow;
-import me.apeiros.magicxpansion.setup.items.weapons.PoseidonsTrident;
-import me.apeiros.magicxpansion.setup.items.weapons.RapidCrossbow;
+import me.apeiros.magicxpansion.setup.items.multiblocks.*;
+import me.apeiros.magicxpansion.setup.items.tools.*;
+import me.apeiros.magicxpansion.setup.items.weapons.*;
+import me.apeiros.magicxpansion.utils.Categories;
 import me.gallowsdove.foxymachines.Items;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static me.apeiros.magicxpansion.setup.MagicXpansionItems.*;
+import static me.apeiros.magicxpansion.utils.RecipeTypes.*;
 
 public class Setup {
 
     public static void setup(JavaPlugin plugin) {
-
         // Register Category
         Categories.MAIN.register((SlimefunAddon) plugin);
 
@@ -88,18 +85,18 @@ public class Setup {
         // Register Shulkerium Alloys
         SlimefunItem shulkerAlloyIngot = new ShulkerAlloy(Categories.RESOURCES, SHULKER_ALLOY_INGOT, RecipeType.SMELTERY,
                 new ItemStack[] {
-                        REINFORCED_SHULKER_SHELL, SlimefunItems.BLISTERING_INGOT_3, null, null, null, null, null, null, null});
+                        REINFORCED_SHULKER_SHELL, Items.DEMONIC_INGOT, null, null, null, null, null, null, null});
         shulkerAlloyIngot.register((SlimefunAddon) plugin);
 
         SlimefunItem refinedShulkerAlloyChunk = new RefinedShulkerAlloy(Categories.RESOURCES, REFINED_SHULKER_ALLOY, RecipeType.SMELTERY,
                 new ItemStack[] {
-                        SHULKER_ALLOY_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.HARDENED_METAL_INGOT,
-                        SlimefunItems.CARBONADO, Items.DEMONIC_INGOT, new ItemStack(Material.NETHERITE_BLOCK),
-                        SlimefunItems.SYNTHETIC_SHULKER_SHELL, ARCANIUM_INGOT, SlimefunItems.SYNTHETIC_EMERALD});
+                        Items.DEMONIC_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT, ARCANIUM_INGOT,
+                        SlimefunItems.CARBONADO, SHULKER_ALLOY_INGOT, SlimefunItems.CARBONADO,
+                        SlimefunItems.SYNTHETIC_SHULKER_SHELL, SlimefunItems.HARDENED_METAL_INGOT, SlimefunItems.SYNTHETIC_SHULKER_SHELL});
         refinedShulkerAlloyChunk.register((SlimefunAddon) plugin);
 
         // Register Crossbow of Infinity
-        SlimefunItem infinityCrossbow = new InfinityCrossbow(Categories.WEAPONS, INFINITY_CROSSBOW, RecipeType.ANCIENT_ALTAR,
+        SlimefunItem infinityCrossbow = new CustomCrossbow(Categories.WEAPONS, INFINITY_CROSSBOW, RecipeType.ANCIENT_ALTAR,
                 new ItemStack[] {
                         SlimefunItems.CARBON_CHUNK, SlimefunItems.ENDER_RUNE, SlimefunItems.CARBON_CHUNK,
                         SlimefunItems.SYNTHETIC_EMERALD, new ItemStack(Material.CROSSBOW), SlimefunItems.SYNTHETIC_EMERALD,
@@ -107,7 +104,7 @@ public class Setup {
         infinityCrossbow.register((SlimefunAddon) plugin);
 
         // Register Crossbow of Rapidity
-        SlimefunItem rapidCrossbow = new RapidCrossbow(Categories.WEAPONS, RAPID_CROSSBOW, RecipeType.ANCIENT_ALTAR,
+        SlimefunItem rapidCrossbow = new CustomCrossbow(Categories.WEAPONS, RAPID_CROSSBOW, RecipeType.ANCIENT_ALTAR,
                 new ItemStack[] {
                         ARCANIUM_INGOT, SlimefunItems.SLIME_LEGGINGS_STEEL, ARCANIUM_INGOT,
                         SlimefunItems.MAGIC_SUGAR, new ItemStack(Material.CROSSBOW), SlimefunItems.MAGIC_SUGAR,
@@ -116,7 +113,7 @@ public class Setup {
         rapidCrossbow.register((SlimefunAddon) plugin);
 
         // Register Crossbow of the Nether
-        SlimefunItem netherCrossbow = new NetherCrossbow(Categories.WEAPONS, NETHER_CROSSBOW, RecipeType.ANCIENT_ALTAR,
+        SlimefunItem netherCrossbow = new CustomCrossbow(Categories.WEAPONS, NETHER_CROSSBOW, RecipeType.ANCIENT_ALTAR,
                 new ItemStack[] {
                         new ItemStack(Material.BLAZE_ROD), SlimefunItems.NETHER_ICE, new ItemStack(Material.BLAZE_ROD),
                         SlimefunItems.FIRE_RUNE, new ItemStack(Material.CROSSBOW), SlimefunItems.FIRE_RUNE,
@@ -124,11 +121,10 @@ public class Setup {
                 });
         netherCrossbow.register((SlimefunAddon) plugin);
 
-        // Register Nautilus Fossil
+        // Register Nautilus Fossil and Nautilus Shell
         SlimefunItem nautilusFossil = new UnplaceableHeadResource(Categories.GENERAL, NAUTILUS_FOSSIL, RecipeType.GEO_MINER, new ItemStack[9]);
         nautilusFossil.register((SlimefunAddon) plugin);
 
-        // Register Nautilus Shell
         VanillaItem nautilusShell = new VanillaItem(Categories.GENERAL, new ItemStack(Material.NAUTILUS_SHELL), "NAUTILUS_SHELL", RecipeType.ORE_WASHER,
                 new ItemStack[] {
                         NAUTILUS_FOSSIL, null, null,
@@ -186,6 +182,21 @@ public class Setup {
                         ENERGY_CORE, SlimefunItems.INFUSED_MAGNET, ENERGY_CORE,
                         SlimefunItems.ELECTRO_MAGNET, Items.ELECTRIC_WIND_STAFF, SlimefunItems.ELECTRO_MAGNET});
         staffEnergizedWind.register((SlimefunAddon) plugin);
+
+        // Register Reaper Scythe and Soul
+        SlimefunItem reaperScythe = new MeleeWeapon(Categories.WEAPONS, REAPER_SCYTHE, RecipeType.ANCIENT_ALTAR,
+                new ItemStack[] {
+                        NETHER_STAR_BLOCK, NETHER_STAR_BLOCK, NETHER_STAR_BLOCK,
+                        SlimefunItems.ESSENCE_OF_AFTERLIFE, new ItemStack(Material.TOTEM_OF_UNDYING), Items.DEMONIC_INGOT,
+                        SlimefunItems.ESSENCE_OF_AFTERLIFE, SlimefunItems.ESSENCE_OF_AFTERLIFE, Items.DEMONIC_INGOT});
+        reaperScythe.register((SlimefunAddon) plugin);
+
+        SlimefunItem soul = new MeleeWeapon(Categories.WEAPONS, SOUL, REAPER_SCYTHE_TYPE,
+                new ItemStack[] {
+                        null, null, null,
+                        null, new CustomItem(Material.DROWNED_SPAWN_EGG, "&aAny mob"), null,
+                        null, null, null});
+        soul.register((SlimefunAddon) plugin);
 
         // Register GEO-Resources
         ArcaniumOreResource arcaniumOreResource = new ArcaniumOreResource(plugin, ARCANIUM_ORE);
