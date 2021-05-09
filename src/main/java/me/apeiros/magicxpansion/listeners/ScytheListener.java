@@ -3,7 +3,6 @@ package me.apeiros.magicxpansion.listeners;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Wither;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -26,21 +25,10 @@ public class ScytheListener implements Listener {
             if (!(e.getEntity() instanceof Player) &&
                     SlimefunUtils.isItemSimilar(killer.getInventory().getItemInMainHand(), MagicXpansionItems.REAPER_SCYTHE, false, false)) {
                 ThreadLocalRandom r = ThreadLocalRandom.current();
-                int rNum = r.nextInt(299);
+                int rNum = r.nextInt(2);
 
-                if (e.getEntity() instanceof Wither) {
-                    if (rNum <= 199) {
-                        e.getDrops().add(MagicXpansionItems.SOUL);
-                        e.getDrops().add(MagicXpansionItems.SOUL);
-
-                        if (rNum <= 99) {
-                            e.getDrops().add(MagicXpansionItems.SOUL_CLUSTER);
-                        }
-                    }
-                } else {
-                    if (rNum <= 99) {
-                        e.getDrops().add(MagicXpansionItems.SOUL);
-                    }
+                if (rNum == 0) {
+                    e.getDrops().add(MagicXpansionItems.SOUL);
                 }
             }
         }

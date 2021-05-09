@@ -19,7 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class CrossbowListener implements Listener {
 
-    public CrossbowListener (JavaPlugin plugin) {
+    public CrossbowListener(JavaPlugin plugin) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 

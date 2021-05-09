@@ -115,13 +115,12 @@ public final class MagicXpansionItems {
         STAFF_ENERGIZED_WIND.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
     public static final SlimefunItemStack REAPER_SCYTHE = new SlimefunItemStack("REAPER_SCYTHE", Material.IRON_HOE,
-            "&cThe Reaper's Scythe", "&7Extricate III", "", "&cThis scythe can extract &bSouls &cfrom killed", "&cmobs and drop them on the ground in", "&ca condensed, corporeal form.", "", "&5&oWithers may drop extra souls... I wonder why");
+            "&cThe Reaper's Scythe", "&7Extricate III", "", "&cThis scythe can extract &bSouls &cfrom killed", "&cmobs and drop them on the ground in", "&ca condensed, corporeal form.");
 
     static {
         ItemMeta meta = REAPER_SCYTHE.getItemMeta();
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE,
-                new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 5,
-                        AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+                new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
 
         REAPER_SCYTHE.setItemMeta(meta);
 
@@ -131,13 +130,10 @@ public final class MagicXpansionItems {
     }
 
     public static final SlimefunItemStack SOUL = new SlimefunItemStack("SOUL", Material.BLUE_DYE,
-            "&bSoul");
+            "&bSoul", "", "&9It begs to be set free from", "&9the curse it rests in...");
 
     static {
         SOUL.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
         SOUL.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
-
-    public static final SlimefunItemStack SOUL_CLUSTER = new SlimefunItemStack("SOUL_CLUSTER", HeadTextures.SOUL_CLUSTER_TEXTURE,
-            "&bCore of Energy", "", "&a&oIt radiates with a forgotten energy...", "", LoreBuilder.radioactive(Radioactivity.VERY_HIGH), LoreBuilder.HAZMAT_SUIT_REQUIRED);
 }
