@@ -130,7 +130,7 @@ public class Setup {
                         NAUTILUS_FOSSIL, null, null,
                         null, null, null,
                         null, null, null
-        });
+                });
         nautilusShell.register((SlimefunAddon) plugin);
 
         // Register Trident

@@ -12,7 +12,6 @@ import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.apeiros.magicxpansion.setup.Setup;
 
 import javax.annotation.Nonnull;
-import java.io.File;
 
 public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
 
@@ -46,14 +45,12 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        // You can return a link to your Bug Tracker instead of null here
         return "https://github.com/Apeiros-46B/MagicXpansion/issues";
     }
 
     @Nonnull
     @Override
     public JavaPlugin getJavaPlugin() {
-        // Returns a reference to this JavaPlugin
         return this;
     }
 
