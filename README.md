@@ -7,6 +7,7 @@
 **This addon will not work without these!**
 
 - Java 11
+- [Paper](https://papermc.io)
 - [Slimefun4](https://github.com/Slimefun/Slimefun4)
 - [FoxyMachines](https://github.com/GallowsDove/FoxyMachines)
 
@@ -28,7 +29,7 @@ This addon adds more magical gadgets and talismans.
 - Blessed Aquatic Netherite
 - Core of Energy
 - Nether Star Block
-- Illusioner Totem
+- Illusioner Totem **(WIP)**
 
 ### List of tools, weapons, armor, and utilities:
 - Crossbow of Infinity
