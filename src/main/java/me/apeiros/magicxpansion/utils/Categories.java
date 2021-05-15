@@ -2,12 +2,14 @@ package me.apeiros.magicxpansion.utils;
 
 import io.github.mooy1.infinitylib.slimefun.utils.MultiCategory;
 import io.github.mooy1.infinitylib.slimefun.utils.SubCategory;
+import lombok.experimental.UtilityClass;
 import me.apeiros.magicxpansion.MagicXpansion;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 
+@UtilityClass
 public final class Categories {
 
    public static final Category GENERAL = new SubCategory(
@@ -20,19 +22,19 @@ public final class Categories {
             new CustomItem(Material.NETHERITE_INGOT, "&6MagicXpansion &7- &bResources", "", "&b⇨ Click to open")
    );
 
-   public static final Category UTILITIES = new SubCategory(
-            new NamespacedKey(MagicXpansion.getInstance(), "magicxpansion_utils"),
-            new CustomItem(Material.SHEARS, "&6MagicXpansion &7- &eUtilities", "", "&e⇨ Click to open")
+   public static final Category MAGICAL = new SubCategory(
+            new NamespacedKey(MagicXpansion.getInstance(), "magicxpansion_magical"),
+            new CustomItem(Material.BLAZE_POWDER, "&6MagicXpansion &7- &eMagical Items", "", "&e⇨ Click to open")
    );
 
    public static final Category TOOLS = new SubCategory(
             new NamespacedKey(MagicXpansion.getInstance(), "magicxpansion_tools"),
-            new CustomItem(Material.NETHERITE_PICKAXE, "&6MagicXpansion &7- &dTools", "", "&d⇨ Click to open")
+            new CustomItem(Material.IRON_PICKAXE, "&6MagicXpansion &7- &dTools", "", "&d⇨ Click to open")
    );
 
    public static final Category WEAPONS = new SubCategory(
             new NamespacedKey(MagicXpansion.getInstance(), "magicxpansion_weapons"),
-            new CustomItem(Material.IRON_HOE, "&6MagicXpansion &7- &cWeapons", "", "&c⇨ Click to open")
+            new CustomItem(Material.NETHERITE_SWORD, "&6MagicXpansion &7- &cWeapons", "", "&c⇨ Click to open")
    );
 
    public static final Category ARMOR = new SubCategory(
@@ -48,6 +50,6 @@ public final class Categories {
    public static final Category MAIN = new MultiCategory(
             new NamespacedKey(MagicXpansion.getInstance(), "magicxpansion"),
             new CustomItem(Material.END_PORTAL_FRAME, "&6MagicXpansion", "", "&5⇨ Click to open"),
-            GENERAL, RESOURCES, UTILITIES, TOOLS, WEAPONS, ARMOR, MACHINES
+            GENERAL, RESOURCES, MAGICAL, TOOLS, WEAPONS, ARMOR, MACHINES
    );
 }

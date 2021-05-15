@@ -6,9 +6,9 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class UnplaceableHeadResource extends UnplaceableBlock {
+public class UnplaceableHeadItem extends UnplaceableBlock {
 
-    public UnplaceableHeadResource(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public UnplaceableHeadItem(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 

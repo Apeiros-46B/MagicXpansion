@@ -1,24 +1,32 @@
 package me.apeiros.magicxpansion;
 
+import io.github.mooy1.infinitylib.AbstractAddon;
+import io.github.mooy1.infinitylib.bstats.bukkit.Metrics;
+import io.github.mooy1.infinitylib.commands.AbstractCommand;
+import lombok.SneakyThrows;
 import me.apeiros.magicxpansion.listeners.CrossbowListener;
-import me.apeiros.magicxpansion.listeners.ScytheListener;
+import me.apeiros.magicxpansion.listeners.MobDeathListener;
 import me.apeiros.magicxpansion.listeners.TridentListener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.apeiros.magicxpansion.setup.Setup;
+import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
-public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
+public class MagicXpansion extends AbstractAddon {
 
     private static MagicXpansion instance;
 
+    @SneakyThrows
     @Override
     public void onEnable() {
+        instance = this;
+        super.onEnable();
+
         // Read something from your config.yml
         Config cfg = new Config(this);
 
@@ -26,16 +34,13 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
             // You could start an Auto-Updater for example
         }
 
-        // Instance
-        instance = this;
-
         // Setup items
-        Setup.setup(this);
+        Setup.setup();
 
         // Register Listeners
         new TridentListener(this);
         new CrossbowListener(this);
-        new ScytheListener(this);
+        new MobDeathListener(this);
     }
 
     @Override
@@ -43,15 +48,27 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         // Logic for disabling the plugin...
     }
 
+    @Nullable
     @Override
-    public String getBugTrackerURL() {
-        return "https://github.com/Apeiros-46B/MagicXpansion/issues";
+    protected Metrics setupMetrics() {
+        return null;
     }
 
     @Nonnull
     @Override
-    public JavaPlugin getJavaPlugin() {
-        return this;
+    protected String getGithubPath() {
+        return "https://github.com/Apeiros-46B/MagicXpansion";
+    }
+
+    @Nonnull
+    @Override
+    protected List<AbstractCommand> getSubCommands() {
+        return null;
+    }
+
+    @Nonnull
+    public static MagicXpansion getInstance() {
+        return instance;
     }
 
     public static boolean doesInvHaveSpace(Inventory inv, ItemStack addedItem, int amount) {
@@ -62,10 +79,5 @@ public class MagicXpansion extends JavaPlugin implements SlimefunAddon {
         } else {
             return false;
         }
-    }
-
-    @Nonnull
-    public static MagicXpansion getInstance() {
-        return instance;
     }
 }

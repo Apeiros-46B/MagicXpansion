@@ -100,6 +100,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.destroystokyo.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.16.5-R0.1-20210512.141249-246</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
             <version>RC-22</version>
@@ -123,6 +129,13 @@
             <artifactId>InfinityLib</artifactId>
             <version>b1beb1bb47</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
