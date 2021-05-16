@@ -53,8 +53,8 @@ This addon adds more magical gadgets and talismans.
 
 ### Thanks to
 - DeepFriedDurp#5899 for helping me come up with ideas
-- [@GallowsDove](https://github.com/gallowsdove), @waleks#6762 and [@Mooy1](https://github.com/mooy1) for giving feedback on ideas
+- [@GallowsDove](https://github.com/gallowsdove), [@waleks](https://github.com/waleks647) and [@Mooy1](https://github.com/mooy1) for giving feedback on ideas
 - [Slimefun Discord](https://discord.gg/slimefun) for having a #programming-help channel
-- @waleks#6762, [@Mooy1](https://github.com/mooy1), and [@WalshyDev](https://github.com/walshydev) for answering me in #programming-help
+- [@waleks](https://github.com/waleks647), [@Mooy1](https://github.com/mooy1), and [@WalshyDev](https://github.com/walshydev) for answering me in #programming-help
 - [@TheBusyBiscuit](https://github.com/thebusybiscuit) for creating [Slimefun4](https://github.com/Slimefun/Slimefun4)
 - [@GallowsDove](https://github.com/gallowsdove) for creating [FoxyMachines](https://github.com/GallowsDove/FoxyMachines)
