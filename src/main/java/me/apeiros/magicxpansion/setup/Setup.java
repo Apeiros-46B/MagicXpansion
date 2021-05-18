@@ -9,7 +9,7 @@ import me.apeiros.magicxpansion.setup.items.electric.SoulReactor;
 import me.apeiros.magicxpansion.setup.items.georesources.ArcaniumOreResource;
 import me.apeiros.magicxpansion.setup.items.georesources.NautilusFossilResource;
 import me.apeiros.magicxpansion.setup.items.materials.*;
-import me.apeiros.magicxpansion.setup.items.mobdrops.BasicSpellbook;
+import me.apeiros.magicxpansion.setup.items.spells.BasicSpellbook;
 import me.apeiros.magicxpansion.setup.items.multiblocks.CarbonCrusherMachine;
 import me.apeiros.magicxpansion.setup.items.tools.ContainerItem;
 import me.apeiros.magicxpansion.setup.items.tools.EnergizedWindStaff;

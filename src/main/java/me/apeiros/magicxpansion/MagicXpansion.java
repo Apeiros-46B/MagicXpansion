@@ -2,22 +2,21 @@ package me.apeiros.magicxpansion;
 
 import io.github.mooy1.infinitylib.AbstractAddon;
 import io.github.mooy1.infinitylib.bstats.bukkit.Metrics;
-import io.github.mooy1.infinitylib.commands.AbstractCommand;
-import lombok.SneakyThrows;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.apeiros.magicxpansion.listeners.CrossbowListener;
 import me.apeiros.magicxpansion.listeners.MobDeathListener;
 import me.apeiros.magicxpansion.listeners.TridentListener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import lombok.SneakyThrows;
 
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.apeiros.magicxpansion.setup.Setup;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 
-public class MagicXpansion extends AbstractAddon {
+public class MagicXpansion extends AbstractAddon implements SlimefunAddon {
 
     private static MagicXpansion instance;
 
@@ -61,17 +60,11 @@ public class MagicXpansion extends AbstractAddon {
     }
 
     @Nonnull
-    @Override
-    protected List<AbstractCommand> getSubCommands() {
-        return null;
-    }
-
-    @Nonnull
     public static MagicXpansion getInstance() {
         return instance;
     }
 
-    public static boolean doesInvHaveSpace(Inventory inv, ItemStack addedItem, int amount) {
+    public static boolean doesInvHaveSpace(Inventory inv, ItemStack addedItem) {
         // Returns true if an Inventory has space for an amount of items being added, false if not
         if (inv.addItem(addedItem).isEmpty()) {
             inv.removeItem(addedItem);

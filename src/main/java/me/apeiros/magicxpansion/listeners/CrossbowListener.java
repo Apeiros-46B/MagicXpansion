@@ -32,7 +32,7 @@ public class CrossbowListener implements Listener {
                 Inventory inv = p.getInventory();
 
                 if (p.getGameMode() != GameMode.CREATIVE) {
-                    if (MagicXpansion.doesInvHaveSpace(inv, new ItemStack(Material.ARROW), 1)) {
+                    if (MagicXpansion.doesInvHaveSpace(inv, new ItemStack(Material.ARROW))) {
                         inv.addItem(new ItemStack(Material.ARROW));
                     }
                 }
@@ -49,10 +49,11 @@ public class CrossbowListener implements Listener {
                 if (rNum == 0) {
                     Vector v = projectile.getVelocity();
 
-                    Entity fireballProjectile = world.spawnEntity(loc, EntityType.SMALL_FIREBALL);
-                    fireballProjectile.setGravity(false);
-                    fireballProjectile.teleport(loc);
-                    fireballProjectile.setVelocity(v);
+                    Fireball fb = p.launchProjectile(Fireball.class, v.multiply(2).normalize());
+                    fb.setIsIncendiary(true);
+                    fb.setYield(0F);
+                    fb.setFireTicks(32767);
+
                     world.playEffect(loc, Effect.MOBSPAWNER_FLAMES, 1);
                 }
             }

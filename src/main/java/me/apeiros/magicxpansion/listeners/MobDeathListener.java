@@ -3,6 +3,7 @@ package me.apeiros.magicxpansion.listeners;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.apeiros.magicxpansion.setup.MagicXpansionItems;
 import org.bukkit.entity.Evoker;
+import org.bukkit.entity.Illusioner;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Wither;
 import org.bukkit.event.EventHandler;
@@ -49,6 +50,10 @@ public class MobDeathListener implements Listener {
 
         if (r.nextInt(99) <= 14 && e.getEntity().getKiller() != null && e.getEntity() instanceof Evoker) {
             e.getDrops().add(MagicXpansionItems.BASIC_SPELLBOOK);
+        }
+
+        if (e.getEntity() instanceof Illusioner) {
+            // I'll add this tomorrow i'm tired
         }
     }
 }

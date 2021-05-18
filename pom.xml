@@ -121,13 +121,13 @@
         <dependency>
             <groupId>com.github.GallowsDove</groupId>
             <artifactId>FoxyMachines</artifactId>
-            <version>ce4f819332</version>
+            <version>ce4f819</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.Mooy1</groupId>
             <artifactId>InfinityLib</artifactId>
-            <version>b1beb1bb47</version>
+            <version>df01abd</version>
             <scope>compile</scope>
         </dependency>
 
