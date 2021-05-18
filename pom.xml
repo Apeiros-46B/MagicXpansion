@@ -96,6 +96,7 @@
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.16.5-R0.1-20210512.141249-246</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -119,17 +120,17 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.Mooy1</groupId>
-            <artifactId>InfinityLib</artifactId>
-            <version>df01abd</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.Mooy1</groupId>
+            <artifactId>InfinityLib</artifactId>
+            <version>df01abd</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
