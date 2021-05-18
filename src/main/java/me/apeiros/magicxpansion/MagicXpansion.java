@@ -34,7 +34,7 @@ public class MagicXpansion extends AbstractAddon implements SlimefunAddon {
         }
 
         // Setup items
-        Setup.setup();
+        Setup.setup(instance);
 
         // Register Listeners
         new TridentListener(this);
