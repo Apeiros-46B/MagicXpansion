@@ -115,6 +115,7 @@
             <groupId>com.github.GallowsDove</groupId>
             <artifactId>FoxyMachines</artifactId>
             <version>ce4f819</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
