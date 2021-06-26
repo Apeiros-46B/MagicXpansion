@@ -2,6 +2,8 @@
 
 **By Apeiros**
 
+### This project has been temporarily paused
+
 ### Requirements/Dependencies:
 
 **This addon will not work without these!**
