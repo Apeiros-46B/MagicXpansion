@@ -3,6 +3,7 @@
 **By Apeiros**
 
 ### This project has been temporarily paused
+### This project will most likely be re-made with a different purpose soon
 
 ### Requirements/Dependencies:
 
