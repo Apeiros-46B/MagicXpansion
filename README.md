@@ -2,8 +2,8 @@
 
 **By Apeiros**
 
-### This project has been temporarily paused.
-### This project will most likely be re-made with a different purpose soon.
+### This project has been temporarily stalled.
+### This project will most likely be re-made soon.
 
 ### Requirements/Dependencies:
 
